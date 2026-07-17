@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martiniano Gavotti — Desarrollador Full Stack</title>
+  <meta name="description" content="Desarrollador full stack (PHP · Laravel) y analista de sistemas. Diseño, modelo y construyo sistemas de gestión de punta a punta: del relevamiento a la entrega.">
+
+  <!-- Open Graph (para compartir en LinkedIn / redes) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Martiniano Gavotti — Desarrollador Full Stack">
+  <meta property="og:description" content="Convierto procesos de papel en sistemas que funcionan. Portfolio: proyectos, skills y servicios.">
+  <meta property="og:locale" content="es_AR">
+  <!-- TODO: cuando exista la imagen, descomentar y subir assets/og.png (1200x630) -->
+  <!-- <meta property="og:image" content="assets/og.png"> -->
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Tipografías: Archivo + Chivo + Chivo Mono (Omnibus-Type, Argentina) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Chivo:wght@300;400;700&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Línea de margen (firma visual: el margen rojo de un libro de registro) -->
+  <div class="margen" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#inicio" aria-label="Ir al inicio">MG<span class="nav__logo-punto">.</span></a>
+    <nav class="nav__links" aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#skills">Skills</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#servicios">Servicios</a>
+    </nav>
+    <a class="boton boton--chico" href="#contacto">Contacto</a>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <p class="hero__eyebrow mono">Martiniano Gavotti · Desarrollador Full Stack</p>
+      <h1 class="hero__titulo" id="hero-titulo">
+        Convierto procesos de papel en <em>sistemas que funcionan</em>.
+      </h1>
+      <p class="hero__bajada">
+        Desarrollador full stack (PHP · Laravel) y analista de sistemas en el último año
+        de la carrera. Diseño, modelo y construyo software de gestión de punta a punta:
+        del relevamiento a la entrega.
+      </p>
+      <div class="hero__acciones">
+        <a class="boton" href="#proyectos">Ver proyectos</a>
+        <a class="boton boton--fantasma" href="#contacto">Contactame</a>
+      </div>
+      <p class="hero__scroll mono" aria-hidden="true">Deslizá para leer el registro ↓</p>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="registro" id="sobre-mi">
+      <header class="registro__cabecera">
+        <span class="registro__num mono">Registro N.º 01</span>
+        <h2 class="registro__titulo">Sobre mí</h2>
+        <span class="registro__regla" aria-hidden="true"></span>
+      </header>
+
+      <div class="sobremi">
+        <figure class="sobremi__retrato" aria-label="Foto de Martiniano Gavotti (pendiente)">
+          <!-- TODO: reemplazar por <img src="assets/foto.jpg" alt="Martiniano Gavotti"> -->
+          <span class="sobremi__iniciales" aria-hidden="true">MG</span>
+          <figcaption class="mono">Foto · pendiente</figcaption>
+        </figure>
+
+        <div class="sobremi__texto">
+          <p>
+            Soy Martiniano, desarrollador de Argentina. Me estoy formando como
+            <strong>Analista en Sistemas</strong> —último año, 90&nbsp;% de la carrera— y me
+            especializo en <strong>sistemas de gestión</strong>: software que ordena el trabajo
+            diario de organizaciones reales.
+          </p>
+          <p class="placeholder">
+            [Placeholder — acá va algo tuyo: qué te gusta de programar, cómo trabajás,
+            qué buscás en un equipo. Dos o tres oraciones alcanzan.]
+          </p>
+
+          <h3 class="sobremi__subtitulo mono">Formación</h3>
+          <ol class="timeline">
+            <li class="timeline__item">
+              <span class="timeline__fecha mono placeholder-inline">[Año]</span>
+              <span>Inicio de la carrera Analista en Sistemas</span>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__fecha mono placeholder-inline">[Año]</span>
+              <span>Primer proyecto comercial como desarrollador</span>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__fecha mono">2026</span>
+              <span>Senda: primer entregable finalizado · último año de la carrera</span>
+            </li>
+          </ol>
+
+          <!-- TODO: activar cuando exista el archivo assets/cv-martiniano-gavotti.pdf
+          <a class="boton boton--fantasma" href="assets/cv-martiniano-gavotti.pdf" download>Descargar CV</a>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="registro" id="skills">
+      <header class="registro__cabecera">
+        <span class="registro__num mono">Registro N.º 02</span>
+        <h2 class="registro__titulo">Skills</h2>
+        <span class="registro__regla" aria-hidden="true"></span>
+      </header>
+
+      <p class="registro__intro">
+        Prefiero decirte exactamente qué manejo y qué estoy aprendiendo.
+      </p>
+
+      <div class="skills">
+        <div class="skills__grupo">
+          <h3 class="skills__etiqueta mono">Stack principal — uso a diario</h3>
+          <ul class="skills__lista">
+            <li class="chip chip--principal">PHP</li>
+            <li class="chip chip--principal">Laravel</li>
+            <li class="chip">JavaScript</li>
+            <li class="chip">HTML · CSS</li>
+            <li class="chip">MySQL</li>
+            <li class="chip">Git</li>
+          </ul>
+        </div>
+        <div class="skills__grupo">
+          <h3 class="skills__etiqueta mono">Base sólida</h3>
+          <ul class="skills__lista">
+            <li class="chip">Python — algoritmos y estructuras de datos</li>
+            <li class="chip">Análisis y modelado de sistemas (UML · DER)</li>
+          </ul>
+        </div>
+        <div class="skills__grupo">
+          <h3 class="skills__etiqueta mono">En aprendizaje</h3>
+          <ul class="skills__lista">
+            <li class="chip chip--aprendiendo">React</li>
+            <li class="chip chip--aprendiendo">Django</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="registro" id="proyectos">
+      <header class="registro__cabecera">
+        <span class="registro__num mono">Registro N.º 03</span>
+        <h2 class="registro__titulo">Proyectos</h2>
+        <span class="registro__regla" aria-hidden="true"></span>
+      </header>
+
+      <!-- ---- Ficha: Senda ---- -->
+      <article class="ficha">
+        <header class="ficha__cabecera">
+          <div>
+            <p class="ficha__num mono">Ficha 01</p>
+            <h3 class="ficha__nombre">Senda</h3>
+            <p class="ficha__tipo mono">Proyecto grupal · Sistema de gestión educativa</p>
+          </div>
+          <span class="ficha__estado mono">En desarrollo — primer entregable finalizado</span>
+        </header>
+
+        <dl class="ficha__detalle">
+          <div class="ficha__campo">
+            <dt class="mono">Problema</dt>
+            <dd>
+              Las instituciones educativas registran sus actividades diarias a mano:
+              planillas dispersas, doble carga de datos y documentos obligatorios
+              —como el RITE y el libro de temas— que se arman copiando información
+              que ya existe en otro lado.
+            </dd>
+          </div>
+          <div class="ficha__campo">
+            <dt class="mono">Solución</dt>
+            <dd>
+              Un sistema que centraliza la actividad diaria de la institución y, a partir
+              de esa información, genera automáticamente el RITE y el libro de temas.
+              Se carga una sola vez; el papeleo sale solo.
+            </dd>
+          </div>
+          <div class="ficha__campo">
+            <dt class="mono">Mi rol</dt>
+            <dd>
+              Participé del ciclo completo: relevamiento con entrevistas a los usuarios,
+              modelado del sistema y desarrollo.
+              <span class="placeholder-inline">[Placeholder — precisar tus módulos o aportes concretos.]</span>
+            </dd>
+          </div>
+          <div class="ficha__campo">
+            <dt class="mono">Stack</dt>
+            <dd class="placeholder-inline">[Placeholder — confirmar: PHP · Laravel · MySQL · …]</dd>
+          </div>
+        </dl>
+
+        <div class="ficha__video">
+          <!-- TODO: reemplazar este placeholder por el embed de YouTube (video no listado):
+          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Recorrido por Senda"
+                  loading="lazy" allowfullscreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          -->
+          <div class="video-placeholder">
+            <span class="video-placeholder__icono" aria-hidden="true">▶</span>
+            <p>Recorrido en video por el sistema, narrado por mí — próximamente.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---- Ficha: proyecto comercial ---- -->
+      <article class="ficha">
+        <header class="ficha__cabecera">
+          <div>
+            <p class="ficha__num mono">Ficha 02</p>
+            <h3 class="ficha__nombre placeholder-inline">[Nombre del proyecto comercial]</h3>
+            <p class="ficha__tipo mono">Proyecto individual · Desarrollo comercial</p>
+          </div>
+          <span class="ficha__estado mono">Finalizado — en revisión</span>
+        </header>
+
+        <dl class="ficha__detalle">
+          <div class="ficha__campo">
+            <dt class="mono">Problema</dt>
+            <dd class="placeholder">
+              [Placeholder — qué necesitaba el cliente, qué proceso estaba roto o era lento.]
+            </dd>
+          </div>
+          <div class="ficha__campo">
+            <dt class="mono">Solución</dt>
+            <dd class="placeholder">
+              [Placeholder — qué construiste y qué resolvía. El proyecto llegó a estar listo
+              para la venta: contá qué hacía.]
+            </dd>
+          </div>
+          <div class="ficha__campo">
+            <dt class="mono">Stack</dt>
+            <dd class="placeholder-inline">[Placeholder — tecnologías usadas]</dd>
+          </div>
+        </dl>
+
+        <div class="ficha__video">
+          <div class="video-placeholder">
+            <span class="video-placeholder__icono" aria-hidden="true">▶</span>
+            <p>Video del proyecto — próximamente.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="registro" id="servicios">
+      <header class="registro__cabecera">
+        <span class="registro__num mono">Registro N.º 04</span>
+        <h2 class="registro__titulo">Servicios</h2>
+        <span class="registro__regla" aria-hidden="true"></span>
+      </header>
+
+      <p class="registro__intro">
+        Además de buscar mi primer puesto formal, tomo proyectos freelance.
+      </p>
+
+      <div class="servicios">
+        <article class="servicio">
+          <h3 class="servicio__titulo">Sistemas de gestión a medida</h3>
+          <p>
+            Software que ordena procesos reales: registros, turnos, stock, reportes.
+            Relevamiento incluido — primero entiendo tu proceso, después lo programo.
+          </p>
+        </article>
+        <article class="servicio">
+          <h3 class="servicio__titulo">Sitios y aplicaciones web</h3>
+          <p>
+            Desarrollo web completo, del diseño a la puesta online. Sitios rápidos,
+            claros y fáciles de mantener.
+          </p>
+        </article>
+        <article class="servicio">
+          <h3 class="servicio__titulo">Soporte y evolución</h3>
+          <p>
+            Mejoras, corrección de errores y nuevas funciones sobre sistemas
+            que ya están en uso.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="registro registro--final" id="contacto">
+      <header class="registro__cabecera">
+        <span class="registro__num mono">Registro N.º 05</span>
+        <h2 class="registro__titulo">Contacto</h2>
+        <span class="registro__regla" aria-hidden="true"></span>
+      </header>
+
+      <div class="contacto">
+        <h3 class="contacto__titulo">¿Hablamos?</h3>
+        <p class="contacto__texto">
+          Busco mi primer puesto formal como desarrollador y también tomo proyectos
+          freelance. Si tenés una propuesta, una búsqueda o simplemente una duda,
+          escribime — respondo.
+        </p>
+        <a class="boton boton--grande" href="mailto:marticontacto21@gmail.com">
+          marticontacto21@gmail.com
+        </a>
+        <ul class="contacto__redes">
+          <!-- TODO: completar con las URLs reales -->
+          <li><a class="contacto__red mono" href="https://www.linkedin.com/" rel="me noopener" target="_blank">LinkedIn ↗</a></li>
+          <li><a class="contacto__red mono" href="https://github.com/" rel="me noopener" target="_blank">GitHub ↗</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p class="mono">© 2026 Martiniano Gavotti — Hecho a mano con HTML, CSS y JavaScript. Sin frameworks.</p>
+    <p class="mono pie__nota">Tipografías Archivo y Chivo, de la fundidora argentina Omnibus-Type.</p>
+  </footer>
+
+  <!-- GSAP + plugins (gratuitos desde la v3.13) y Lenis, por CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
