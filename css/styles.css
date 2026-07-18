@@ -493,45 +493,6 @@ a { color: inherit; }
   color: var(--papel);
 }
 
-/* ---------- Video ---------- */
-.ficha__video iframe,
-.video-placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--tinta-3);
-  display: block;
-}
-
-.video-placeholder {
-  background:
-    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(142, 168, 255, 0.05) 14px 28px),
-    var(--tinta);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.video-placeholder__icono {
-  width: 3.4rem;
-  height: 3.4rem;
-  border: 1px solid var(--ambar);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--ambar);
-  font-size: 1.1rem;
-}
-
-.video-placeholder p {
-  color: var(--papel-dim);
-  margin: 0;
-  max-width: 34ch;
-}
-
 /* ---------- Galería de capturas ---------- */
 .ficha__galeria {
   display: grid;
