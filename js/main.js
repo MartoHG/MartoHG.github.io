@@ -18,6 +18,90 @@
   window.addEventListener("scroll", actualizarNav, { passive: true });
   actualizarNav();
 
+  /* ---------- Lightbox de capturas (corre siempre, sin depender de GSAP) ----------
+     Cada .ficha__galeria es un grupo independiente: al hacer click en una de sus
+     capturas se abre el visor navegando solo entre las imágenes de ese grupo.
+     Los enlaces siguen apuntando a la imagen real, así que sin JS se abren
+     igual (en una pestaña nueva). */
+  (function () {
+    var lightbox = document.getElementById("lightbox");
+    if (!lightbox) return;
+
+    var imgEl = document.getElementById("lightboxImg");
+    var captionEl = document.getElementById("lightboxCaption");
+    var btnCerrar = document.getElementById("lightboxCerrar");
+    var btnPrev = document.getElementById("lightboxPrev");
+    var btnNext = document.getElementById("lightboxNext");
+
+    var items = [];
+    var indice = 0;
+    var disparador = null;
+
+    function mostrarActual() {
+      var item = items[indice];
+      imgEl.src = item.href;
+      imgEl.alt = item.alt;
+      captionEl.textContent = item.caption;
+      var hayVarias = items.length > 1;
+      btnPrev.hidden = !hayVarias;
+      btnNext.hidden = !hayVarias;
+    }
+
+    function abrir(nuevosItems, nuevoIndice, elementoOrigen) {
+      items = nuevosItems;
+      indice = nuevoIndice;
+      disparador = elementoOrigen;
+      mostrarActual();
+      lightbox.hidden = false;
+      btnCerrar.focus();
+    }
+
+    function cerrar() {
+      lightbox.hidden = true;
+      imgEl.src = "";
+      if (disparador) disparador.focus();
+    }
+
+    function mover(delta) {
+      indice = (indice + delta + items.length) % items.length;
+      mostrarActual();
+    }
+
+    document.querySelectorAll(".ficha__galeria").forEach(function (galeria) {
+      var enlaces = Array.prototype.slice.call(galeria.querySelectorAll(".ficha__captura a"));
+      var galeriaItems = enlaces.map(function (enlace) {
+        var figcaption = enlace.parentElement.querySelector("figcaption");
+        return {
+          href: enlace.getAttribute("href"),
+          alt: enlace.querySelector("img").alt,
+          caption: figcaption ? figcaption.textContent : ""
+        };
+      });
+
+      enlaces.forEach(function (enlace, i) {
+        enlace.addEventListener("click", function (e) {
+          e.preventDefault();
+          abrir(galeriaItems, i, enlace);
+        });
+      });
+    });
+
+    btnCerrar.addEventListener("click", cerrar);
+    btnPrev.addEventListener("click", function () { mover(-1); });
+    btnNext.addEventListener("click", function () { mover(1); });
+
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) cerrar();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (lightbox.hidden) return;
+      if (e.key === "Escape") cerrar();
+      else if (e.key === "ArrowLeft") mover(-1);
+      else if (e.key === "ArrowRight") mover(1);
+    });
+  })();
+
   if (reduceMotion || typeof gsap === "undefined") {
     return; // sitio 100% funcional sin animaciones
   }
