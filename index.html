@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Chivo:wght@300;400;700&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
 
@@ -175,7 +175,7 @@
           <div class="ficha__campo">
             <dt class="mono">Problema</dt>
             <dd>
-              Las instituciones educativas registran sus actividades diarias a mano:
+              Las instituciones educativas registran su actividad diaria a mano:
               planillas dispersas, doble carga de datos y documentos obligatorios
               —como el RITE y el libro de temas— que se arman copiando información
               que ya existe en otro lado.
@@ -184,28 +184,41 @@
           <div class="ficha__campo">
             <dt class="mono">Solución</dt>
             <dd>
-              Un sistema para gestionar toda la vida escolar de la institución en un
-              solo lugar: desde la actividad diaria hasta los documentos legales que
-              antes se armaban a mano. Con esa información ya cargada, genera de forma
-              automática el libro de temas y, sobre todo, el RITE —el corazón del
-              sistema—. Se carga una vez; el papeleo sale solo.
+              Un sistema que cubre la gestión escolar de punta a punta: instituciones,
+              cursos, materias, docentes, estudiantes, asistencia, calificaciones,
+              intensificaciones y planes de acompañamiento. Con esa información cargada
+              una sola vez, el sistema genera automáticamente los documentos legales
+              —el libro de temas y, sobre todo, el RITE, el corazón del sistema— en
+              lugar de armarlos a mano.
             </dd>
           </div>
           <div class="ficha__campo">
             <dt class="mono">Mi rol</dt>
             <dd>
-              En la documentación trabajé a la par del resto del equipo: todos abarcamos
-              etapas similares de relevamiento y modelado. En el desarrollo construí varios
-              módulos completos: la configuración inicial de la institución, el sistema de
-              roles y permisos, el libro de temas (carga de clases desde la interfaz y
-              generación del PDF legal) y el RITE (recopilación de los datos del estudiante
-              para armar su documento imprimible). Es una etapa temprana, pero con una base
-              sólida; buena parte del resto del sistema la desarrollaron mis compañeros.
+              <p>
+                En la documentación trabajé a la par del equipo, en las mismas etapas
+                de relevamiento y modelado de dominio. En el desarrollo construí varios
+                módulos de punta a punta:
+              </p>
+              <ul class="ficha__lista">
+                <li><strong>Configuración institucional:</strong> alta de instituciones, turnos y modelos de intensificación.</li>
+                <li><strong>Roles y permisos:</strong> control de acceso basado en roles (Spatie Permission) para los distintos perfiles de usuario (directivos, preceptores, docentes).</li>
+                <li><strong>Libro de temas:</strong> carga de clases desde la interfaz y generación del PDF legal correspondiente.</li>
+                <li><strong>RITE:</strong> recopilación de los datos del estudiante (asistencia, calificaciones, intensificaciones) y armado del documento imprimible.</li>
+                <li><strong>Asistencia (en desarrollo):</strong> registro de asistencia institucional y por materia, colaborando junto a otros compañeros del equipo.</li>
+              </ul>
+              <p>
+                Es una etapa temprana, pero con base sólida: arquitectura por dominios
+                (Curso, Estudiante, Asistencia, Calificación, Intensificación, EDTE),
+                cobertura de tests con Pest y generación de PDFs con dompdf. El resto de
+                los módulos —estudiantes, calificaciones, resoluciones— los desarrollaron
+                mis compañeros de equipo.
+              </p>
             </dd>
           </div>
           <div class="ficha__campo">
             <dt class="mono">Stack</dt>
-            <dd>PHP · Laravel · MySQL · Bootstrap · HTMX</dd>
+            <dd>PHP · Laravel 12 · MySQL · Bootstrap · HTMX · Spatie Permission · Pest (testing)</dd>
           </div>
         </dl>
 

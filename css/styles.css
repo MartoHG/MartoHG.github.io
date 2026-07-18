@@ -468,6 +468,31 @@ a { color: inherit; }
   max-width: 62ch;
 }
 
+.ficha__campo dd p { margin: 0 0 0.9rem; }
+.ficha__campo dd p:last-child { margin-bottom: 0; }
+
+.ficha__lista {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+}
+
+.ficha__lista li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.ficha__lista li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--sello);
+}
+
+.ficha__lista strong {
+  color: var(--papel);
+}
+
 /* ---------- Video ---------- */
 .ficha__video iframe,
 .video-placeholder {
