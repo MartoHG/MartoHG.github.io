@@ -102,6 +102,37 @@
     });
   })();
 
+  /* ---------- Galerías densas: colapsadas a un puñado de capturas ----------
+     Sin JS quedan todas visibles (siguen siendo enlaces normales); con JS
+     se recortan a la vista y un botón despliega el resto. */
+  (function () {
+    var UMBRAL = 8;
+
+    document.querySelectorAll(".ficha__galeria--miniaturas").forEach(function (galeria) {
+      var capturas = Array.prototype.slice.call(galeria.querySelectorAll(".ficha__captura"));
+      if (capturas.length <= UMBRAL) return;
+
+      var ocultas = capturas.slice(UMBRAL);
+      ocultas.forEach(function (captura) { captura.hidden = true; });
+
+      var boton = document.createElement("button");
+      boton.type = "button";
+      boton.className = "boton boton--fantasma boton--chico ficha__galeria-toggle";
+      boton.textContent = "Ver las " + capturas.length + " capturas ↓";
+
+      boton.addEventListener("click", function () {
+        var colapsar = boton.textContent.indexOf("Mostrar menos") === 0;
+        ocultas.forEach(function (captura) { captura.hidden = colapsar; });
+        boton.textContent = colapsar
+          ? "Ver las " + capturas.length + " capturas ↓"
+          : "Mostrar menos ↑";
+        if (colapsar) galeria.scrollIntoView({ block: "nearest" });
+      });
+
+      galeria.insertAdjacentElement("afterend", boton);
+    });
+  })();
+
   if (reduceMotion || typeof gsap === "undefined") {
     return; // sitio 100% funcional sin animaciones
   }
