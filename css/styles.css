@@ -507,6 +507,43 @@ a { color: inherit; }
   max-width: 34ch;
 }
 
+/* ---------- Galería de capturas ---------- */
+.ficha__galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.1rem;
+}
+
+.ficha__captura {
+  margin: 0;
+}
+
+.ficha__captura a {
+  display: block;
+  border: 1px solid var(--tinta-3);
+  background: var(--tinta);
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.ficha__captura a:hover,
+.ficha__captura a:focus-visible {
+  border-color: var(--sello);
+  transform: translateY(-3px);
+}
+
+.ficha__captura img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ficha__captura figcaption {
+  color: var(--papel-dim);
+  font-size: 0.8rem;
+  margin-top: 0.55rem;
+}
+
 /* ---------- Servicios ---------- */
 .servicios {
   display: grid;

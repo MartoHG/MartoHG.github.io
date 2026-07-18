@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Chivo:wght@300;400;700&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
 
@@ -227,7 +227,7 @@
         <header class="ficha__cabecera">
           <div>
             <p class="ficha__num mono">Ficha 02</p>
-            <h3 class="ficha__nombre placeholder-inline">[Nombre del proyecto comercial]</h3>
+            <h3 class="ficha__nombre">Plataforma de labor legislativa</h3>
             <p class="ficha__tipo mono">Proyecto individual · Desarrollo comercial</p>
           </div>
           <span class="ficha__estado mono">Finalizado — en revisión</span>
@@ -236,28 +236,59 @@
         <dl class="ficha__detalle">
           <div class="ficha__campo">
             <dt class="mono">Problema</dt>
-            <dd class="placeholder">
-              [Placeholder — qué necesitaba el cliente, qué proceso estaba roto o era lento.]
+            <dd>
+              Un concejal necesitaba una forma moderna y transparente de publicar su
+              labor —proyectos y ordenanzas— y que los vecinos pudieran encontrarla,
+              consultarla y compartirla con facilidad. Hasta entonces esa información
+              estaba dispersa y era difícil de difundir.
             </dd>
           </div>
           <div class="ficha__campo">
             <dt class="mono">Solución</dt>
-            <dd class="placeholder">
-              [Placeholder — qué construiste y qué resolvía. El proyecto llegó a estar listo
-              para la venta: contá qué hacía.]
+            <dd>
+              Una plataforma web con un catálogo público de proyectos y ordenanzas
+              —tarjetas con imagen, categoría y fecha—, un buscador con filtros por tipo
+              y categoría y ordenamiento, y una ficha individual de cada iniciativa. Cada
+              proyecto se comparte por enlace directo y código QR, y adjunta su PDF
+              oficial. Un panel de administración con roles (administrador y colaborador)
+              permite cargar, editar y gestionar los proyectos y los usuarios.
+            </dd>
+          </div>
+          <div class="ficha__campo">
+            <dt class="mono">Mi rol</dt>
+            <dd>
+              Lo desarrollé de punta a punta, en solitario: modelado de datos, el sitio
+              público con el buscador, el panel de administración con roles tipados y
+              policies de permisos, el ABM de proyectos con carga de PDF y generación
+              automática del código QR, las imágenes de portada y una capa de servicios
+              cubierta con tests.
             </dd>
           </div>
           <div class="ficha__campo">
             <dt class="mono">Stack</dt>
-            <dd class="placeholder-inline">[Placeholder — tecnologías usadas]</dd>
+            <dd>PHP · Laravel 12 · MySQL · Tailwind CSS · Alpine.js · Blade</dd>
           </div>
         </dl>
 
-        <div class="ficha__video">
-          <div class="video-placeholder">
-            <span class="video-placeholder__icono" aria-hidden="true">▶</span>
-            <p>Video del proyecto — próximamente.</p>
-          </div>
+        <div class="ficha__galeria">
+          <figure class="ficha__captura">
+            <a href="assets/santana-catalogo.webp" target="_blank" rel="noopener" aria-label="Ver captura del catálogo público en tamaño completo">
+              <img src="assets/santana-catalogo.webp" alt="Catálogo público: tarjetas de proyectos y ordenanzas con categoría y fecha" loading="lazy" width="2560" height="1720">
+            </a>
+            <figcaption class="mono">Catálogo público</figcaption>
+          </figure>
+          <figure class="ficha__captura">
+            <a href="assets/santana-buscador.webp" target="_blank" rel="noopener" aria-label="Ver captura del buscador en tamaño completo">
+              <img src="assets/santana-buscador.webp" alt="Buscador legislativo con filtros por tipo, categoría y ordenamiento" loading="lazy" width="2560" height="1720">
+            </a>
+            <figcaption class="mono">Buscador y filtros</figcaption>
+          </figure>
+          <figure class="ficha__captura">
+            <a href="assets/santana-panel.webp" target="_blank" rel="noopener" aria-label="Ver captura del panel de administración en tamaño completo">
+              <img src="assets/santana-panel.webp" alt="Panel de administración: métricas y últimos documentos cargados" loading="lazy" width="2560" height="1720">
+            </a>
+            <figcaption class="mono">Panel de administración</figcaption>
+          </figure>
         </div>
       </article>
     </section>
