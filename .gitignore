@@ -1,6 +1,0 @@
-# Configuración local de Claude Code (skills, launch.json)
-.claude/
-skills-lock.json
-
-# Imágenes originales sin editar (se versiona solo la versión final)
-assets/Imagen pegada.png
