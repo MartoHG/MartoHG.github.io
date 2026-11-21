@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Respawn Informática | Martiniano Gavotti</title>
+  <meta name="description" content="Un sitio con estética de arcade para mi emprendimiento de reparación de PC y desarrollo web en Olavarría.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Respawn Informática | Martiniano Gavotti">
+  <meta property="og:description" content="Un sitio con estética de arcade para mi emprendimiento de reparación de PC y desarrollo web en Olavarría.">
+  <link rel="canonical" href="https://martohg.github.io/proyectos/respawn/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/portfolio.css">
+  <link rel="stylesheet" href="/assets/desk-cases.css">
+  <script src="/assets/portfolio.js" defer></script>
+</head>
+<body class="case-document">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="/" aria-label="La mesa de Marto, inicio">
+        <span class="brand-icon" aria-hidden="true"></span>La mesa de Marto
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="/#proyectos">Proyectos</a>
+        <a class="nav-about" href="/#sobre-mi">Sobre mí</a>
+        <a href="/#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap case-page" id="contenido" tabindex="-1">
+    <header class="case-header">
+      <a class="back-link" href="/?proyecto=respawn#proyectos"><span aria-hidden="true">←</span> Volver a la mesa</a>
+      <div class="case-intro">
+        <h1>Respawn Informática</h1>
+        <p class="case-lead">Un sitio con estética de arcade para mi emprendimiento de reparación de PC y desarrollo web en Olavarría.</p>
+        <a class="text-link" href="https://respawn-informatica.pages.dev/" target="_blank" rel="noopener">Visitar Respawn Informática <span aria-hidden="true">↗</span></a>
+      </div>
+      <dl class="case-meta">
+        <div>
+          <dt>Rol</dt>
+          <dd>Concepto, diseño y desarrollo individual</dd>
+        </div>
+        <div>
+          <dt>Estado</dt>
+          <dd>Online, con dominio propio pendiente</dd>
+        </div>
+        <div>
+          <dt>Tecnologías</dt>
+          <dd>Astro 7, JavaScript, CSS, SVG, View Transitions, JSON-LD, Cloudflare Pages</dd>
+        </div>
+      </dl>
+    </header>
+
+    <figure class="gallery-item case-cover">
+      <a href="/assets/respawn/respawn-01-home.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de la pantalla de inicio en tamaño completo">
+        <img src="/assets/respawn/respawn-01-home.webp" alt="Pantalla de inicio de Respawn: el corazón de la marca sale detrás de un paisaje pixel de Olavarría" width="1600" height="1000" fetchpriority="high" decoding="async">
+      </a>
+      <figcaption>Pantalla de inicio</figcaption>
+    </figure>
+
+    <div class="case-body">
+      <section class="case-section">
+        <h2>Dos caminos desde la pantalla de inicio</h2>
+        <div class="case-text">
+          <p>
+            Quería que el sitio mostrara cómo trabajo y sirviera para atender dos consultas distintas. Quien
+            llega desde Instagram puede elegir «Tu PC» si necesita un arreglo o «Tu negocio» si necesita una
+            web. En el inicio, un corazón pixelado aparece sobre un paisaje de Olavarría con las sierras, la
+            cementera y el tanque de agua.
+          </p>
+          <p>
+            El taller de PC tiene un menú de misiones, un catálogo de mejoras y un diagnóstico con forma de
+            terminal que recomienda qué servicio pedir. El mundo para negocios tiene seis servicios, desde
+            una landing hasta un sistema a medida. Los proyectos anteriores aparecen como cartuchos que
+            abren fichas con capturas. Cada recorrido termina en WhatsApp con un mensaje escrito para la
+            consulta elegida.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Cómo armé el arcade en la web</h2>
+        <div class="case-text">
+          <p>
+            Definí el concepto, la estructura y la gráfica. Probé primero cada pantalla en un boceto
+            estático y después sumé la animación. El contenido vive en HTML generado por Astro y el
+            JavaScript se carga donde hay interacción. Las ilustraciones se editan como grillas de texto y
+            se convierten a SVG en la compilación.
+          </p>
+          <p>
+            En navegadores compatibles con View Transitions, la PC del selector viaja a la página siguiente
+            y se enciende. Las animaciones usan <code>steps()</code> para el pixel art,
+            <code>transform</code> y <code>opacity</code> para la interfaz, y respetan
+            <code>prefers-reduced-motion</code>. En celular, un cable de energía conecta las secciones y una
+            barra fija mantiene visible el acceso a WhatsApp.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Búsqueda y rendimiento</h2>
+        <div class="case-text">
+          <p>
+            Cada mundo tiene URL, título, H1 y datos estructurados propios con <code>LocalBusiness</code> y
+            <code>Service</code>. El sitio lleva <code>noindex</code> hasta conectar el dominio definitivo.
+            En la página de servicios web, precargar la fuente del título en celular redujo el
+            desplazamiento acumulado del diseño de 0,156 a 0,044 en Lighthouse. Esa medición dio 99 puntos
+            en rendimiento.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="case-gallery" aria-labelledby="capturas">
+      <h2 id="capturas">Capturas</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <a href="/assets/respawn/respawn-02-selector.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del selector de mundos en tamaño completo">
+            <img src="/assets/respawn/respawn-02-selector.webp" alt="Selector de mundos: 1P Tu PC contra 2P Tu negocio" width="1600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Selector de mundos</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/respawn/respawn-03-mundo-pc.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del Mundo PC en tamaño completo">
+            <img src="/assets/respawn/respawn-03-mundo-pc.webp" alt="Mundo PC, con la estación de PC y el menú de misiones" width="1600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Mundo PC</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/respawn/respawn-04-mundo-negocio.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del Mundo negocio en tamaño completo">
+            <img src="/assets/respawn/respawn-04-mundo-negocio.webp" alt="Mundo negocio, con el local y el menú de misiones" width="1600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Mundo negocio</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer class="case-end">
+      <a class="back-link" href="/?proyecto=respawn#proyectos"><span aria-hidden="true">←</span> Volver a la mesa</a>
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Martiniano Gavotti</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,289 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./fonts/bricolage-grotesque.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+.case-document {
+  color-scheme: light;
+  --paper: #f7f3fb;
+  --surface: #eee7f5;
+  --ink: #282137;
+  --muted: #584f65;
+  --line: #d9cfe4;
+  --accent: #f8e3a0;
+  --accent-ink: var(--ink);
+  --focus: #5f4789;
+  --display: "Bricolage Grotesque", "Atkinson Hyperlegible Next", sans-serif;
+  --case-sage: #b7c6a8;
+  --gutter: clamp(1rem, 4.5vw, 4.5rem);
+}
+
+.case-document .wrap {
+  width: min(78rem, calc(100% - var(--gutter) * 2));
+}
+
+.case-document .header-inner {
+  display: flex;
+  min-height: 4.375rem;
+  padding-block: 0;
+}
+
+.case-document .wordmark {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: .625rem;
+  font-size: 1rem;
+  letter-spacing: -.025em;
+}
+
+.case-document .brand-icon {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid #9eaf90;
+  border-radius: .55rem;
+  background: var(--case-sage);
+  color: var(--ink);
+}
+
+.case-document .brand-icon::before {
+  content: "";
+  width: 1.125rem;
+  height: 1rem;
+  background: currentColor;
+  clip-path: polygon(0 0, 22% 0, 22% 25%, 78% 25%, 78% 0, 100% 0, 100% 76%, 89% 76%, 89% 100%, 11% 100%, 11% 76%, 0 76%, 0 0,
+    25% 47%, 25% 65%, 40% 65%, 40% 47%, 25% 47%, 0 0,
+    60% 47%, 60% 65%, 75% 65%, 75% 47%, 60% 47%, 0 0);
+}
+
+.case-document .site-nav {
+  width: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: clamp(.6rem, 2.2vw, 2rem);
+  color: var(--ink);
+}
+
+.case-document .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.case-document .case-page {
+  padding-block: clamp(1.25rem, 3.2vw, 2.75rem) clamp(3rem, 6vw, 5rem);
+}
+
+.case-document .case-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem);
+  column-gap: clamp(2rem, 5vw, 6rem);
+  row-gap: clamp(1.1rem, 2.75vw, 2.4rem);
+  align-items: start;
+  padding-bottom: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.case-document .back-link {
+  width: fit-content;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  text-decoration: none;
+}
+
+.case-document .back-link:hover {
+  text-decoration: underline;
+}
+
+.case-document .case-header .back-link {
+  grid-column: 1 / -1;
+}
+
+.case-document .case-header h1 {
+  max-width: 20ch;
+  margin: 0 0 .75rem;
+  font-size: clamp(2.55rem, 6.1vw, 6rem);
+  font-weight: 780;
+  letter-spacing: -.046em;
+  line-height: .99;
+  text-wrap: balance;
+}
+
+.case-document .case-lead {
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: clamp(1.06rem, 1.65vw, 1.35rem);
+  line-height: 1.42;
+}
+
+.case-document .case-meta {
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  font-size: .95rem;
+  line-height: 1.35;
+}
+
+.case-document .case-meta div {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: .65rem;
+  padding-block: .62rem;
+  border-top: 1px solid var(--line);
+}
+
+.case-document .case-meta div:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.case-document .case-meta dd {
+  margin: 0;
+}
+
+.case-document .case-header .text-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: .35rem;
+  margin-top: 1.15rem;
+  padding: .45rem .85rem;
+  border: 1px solid #b8a65d;
+  border-radius: .5rem;
+  background: var(--accent);
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.case-document .case-header .text-link:hover {
+  border-color: var(--ink);
+  text-decoration: underline;
+}
+
+.case-cover {
+  margin-bottom: clamp(2rem, 5vw, 4.5rem);
+}
+
+.case-document .gallery-item a {
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  background: var(--surface);
+}
+
+.case-document .gallery-item img {
+  border: 0;
+  border-radius: inherit;
+}
+
+.case-document .case-cover img {
+  width: auto;
+  max-height: 44rem;
+  aspect-ratio: auto;
+  margin-inline: auto;
+}
+
+.case-document .gallery-item figcaption {
+  margin-top: .55rem;
+}
+
+.case-document .case-section {
+  grid-template-columns: minmax(10rem, 1fr) minmax(0, 2.1fr);
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+
+.case-document .case-section h2 {
+  max-width: 18ch;
+  font-size: clamp(1.45rem, 2.75vw, 2.45rem);
+  letter-spacing: -.035em;
+  line-height: 1.08;
+}
+
+.case-document .case-text {
+  max-width: 70ch;
+  font-size: clamp(1rem, 1.25vw, 1.13rem);
+}
+
+.case-document .case-gallery {
+  padding-block: clamp(2.15rem, 6vw, 4.35rem);
+}
+
+.case-document .case-gallery h2 {
+  margin-bottom: 1.35rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -.035em;
+}
+
+.case-document .gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.65rem clamp(1rem, 2.2vw, 2rem);
+}
+
+.case-document .gallery-grid > :only-child {
+  grid-column: 1 / -1;
+  width: min(100%, 64rem);
+}
+
+.case-document .gallery-grid > :only-child img {
+  aspect-ratio: auto;
+}
+
+.case-document .gallery-more summary {
+  min-height: 2.75rem;
+  padding-block: .5rem;
+}
+
+.case-document .viewer {
+  border-radius: .65rem;
+}
+
+.case-document .viewer::backdrop {
+  background: rgb(40 33 55 / .76);
+}
+
+.case-document .viewer-tools button {
+  border-radius: .35rem;
+}
+
+@media (max-width: 47rem) {
+  .case-document .header-inner {
+    min-height: 3.75rem;
+  }
+
+  .case-document .case-header,
+  .case-document .case-section {
+    grid-template-columns: 1fr;
+  }
+
+  .case-document .case-section h2 {
+    max-width: 25ch;
+  }
+}
+
+@media (max-width: 37rem) {
+  .case-document .site-nav .nav-about {
+    display: none;
+  }
+
+  .case-document .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 23rem) {
+  .case-document .wordmark {
+    gap: .35rem;
+    font-size: .88rem;
+  }
+
+  .case-document .brand-icon {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+}

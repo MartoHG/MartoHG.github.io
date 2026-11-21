@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senda | Martiniano Gavotti</title>
+  <meta name="description" content="Un sistema de gestión escolar que convierte los registros diarios en el RITE y el libro de temas.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Senda | Martiniano Gavotti">
+  <meta property="og:description" content="Un sistema de gestión escolar que convierte los registros diarios en el RITE y el libro de temas.">
+  <link rel="canonical" href="https://martohg.github.io/proyectos/senda/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/portfolio.css">
+  <link rel="stylesheet" href="/assets/desk-cases.css">
+  <script src="/assets/portfolio.js" defer></script>
+</head>
+<body class="case-document">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="/" aria-label="La mesa de Marto, inicio">
+        <span class="brand-icon" aria-hidden="true"></span>La mesa de Marto
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="/#proyectos">Proyectos</a>
+        <a class="nav-about" href="/#sobre-mi">Sobre mí</a>
+        <a href="/#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap case-page" id="contenido" tabindex="-1">
+    <header class="case-header">
+      <a class="back-link" href="/?proyecto=senda#proyectos"><span aria-hidden="true">←</span> Volver a la mesa</a>
+      <div class="case-intro">
+        <h1>Senda</h1>
+        <p class="case-lead">Un sistema de gestión escolar que convierte los registros diarios en el RITE y el libro de temas.</p>
+        <a class="text-link" href="https://sendaedu.com.ar/" target="_blank" rel="noopener">Ver la página de la demo <span aria-hidden="true">↗</span></a>
+      </div>
+      <dl class="case-meta">
+        <div>
+          <dt>Rol</dt>
+          <dd>Desarrollo full stack en equipo</dd>
+        </div>
+        <div>
+          <dt>Estado</dt>
+          <dd>En desarrollo. Primeros avances presentados al cliente.</dd>
+        </div>
+        <div>
+          <dt>Tecnologías</dt>
+          <dd>PHP, Laravel 12, MySQL, Bootstrap, HTMX, Spatie Permission, Pest, dompdf</dd>
+        </div>
+      </dl>
+    </header>
+
+    <figure class="gallery-item case-cover">
+      <a href="/assets/senda/senda-02-dashboard.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del panel principal en tamaño completo">
+        <img src="/assets/senda/senda-02-dashboard.webp" alt="Panel principal con accesos a estudiantes, resoluciones, cursos y personal" width="1600" height="1000" fetchpriority="high" decoding="async">
+      </a>
+      <figcaption>Panel principal</figcaption>
+    </figure>
+
+    <div class="case-body">
+      <section class="case-section">
+        <h2>Una sola carga para el trabajo diario</h2>
+        <div class="case-text">
+          <p>
+            Cuando una escuela lleva su actividad en planillas dispersas, para armar el RITE y el libro de
+            temas tiene que reunir y volver a copiar información que ya registró.
+          </p>
+          <p>
+            Senda reúne instituciones, cursos, materias, docentes, estudiantes, asistencia, calificaciones,
+            intensificaciones y planes de acompañamiento. A partir de esa carga genera los documentos que
+            debe presentar la escuela.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Lo que desarrollé</h2>
+        <div class="case-text">
+          <p>
+            Hice el relevamiento y el modelado del dominio junto al equipo. Después implementé cuatro
+            módulos completos.
+          </p>
+          <ul>
+            <li>
+              <strong>Configuración institucional.</strong> Implementé el alta de instituciones, turnos y
+              modelos de intensificación.
+            </li>
+            <li>
+              <strong>Roles y permisos.</strong> Configuré los accesos de directivos, preceptores y docentes
+              con Spatie Permission.
+            </li>
+            <li>
+              <strong>Libro de temas.</strong> Desarrollé el registro de clases desde la interfaz y la
+              generación del PDF.
+            </li>
+            <li>
+              <strong>RITE.</strong> Reuní asistencia, calificaciones e intensificaciones de cada estudiante
+              en un documento imprimible.
+            </li>
+          </ul>
+          <p>
+            También estoy colaborando en el registro de asistencia institucional y por materia. Mis
+            compañeros desarrollaron los módulos de estudiantes, calificaciones y resoluciones.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Cómo se organiza el sistema</h2>
+        <div class="case-text">
+          <p>
+            El código se agrupa por dominios, entre ellos Curso, Estudiante, Asistencia, Calificación,
+            Intensificación y EDTE. Usamos Pest para las pruebas y dompdf para generar los documentos.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="case-gallery" aria-labelledby="capturas">
+      <h2 id="capturas">Capturas</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <a href="/assets/senda/senda-05-rite.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de la vista previa del RITE en tamaño completo">
+            <img src="/assets/senda/senda-05-rite.webp" alt="Vista previa del RITE con calificaciones y materias pendientes" width="1600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Vista previa del RITE</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/senda/senda-14-registrar-clase.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del formulario para registrar una clase en tamaño completo">
+            <img src="/assets/senda/senda-14-registrar-clase.webp" alt="Formulario para registrar una clase dictada" width="1600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Registrar una clase</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/senda/senda-16-institucion.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de datos de la institución en tamaño completo">
+            <img src="/assets/senda/senda-16-institucion.webp" alt="Configuración de la institución: identificación, ubicación y turnos" width="1600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Datos de la institución</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/senda/senda-17-roles.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de roles y permisos en tamaño completo">
+            <img src="/assets/senda/senda-17-roles.webp" alt="Roles del sistema con sus permisos asignados (Spatie Permission)" width="1600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Roles y permisos</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/senda/senda-10-gestion-diaria.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de gestión diaria por curso en tamaño completo">
+            <img src="/assets/senda/senda-10-gestion-diaria.webp" alt="Selección de curso para gestionar libro de temas, calificaciones y asistencia" width="1600" height="1000" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Gestión diaria por curso</figcaption>
+        </figure>
+      </div>
+      <details class="gallery-more">
+        <summary>Ver las 14 capturas restantes</summary>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-01-login.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de inicio de sesión en tamaño completo">
+              <img src="/assets/senda/senda-01-login.webp" alt="Pantalla de inicio de sesión de Senda" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Inicio de sesión</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-15-configuracion.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del panel de configuración en tamaño completo">
+              <img src="/assets/senda/senda-15-configuracion.webp" alt="Panel de configuración: roles, resoluciones, institución, EDTE y periodos" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Panel de configuración</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-20-periodos.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de períodos de intensificación en tamaño completo">
+              <img src="/assets/senda/senda-20-periodos.webp" alt="Listado de períodos de intensificación por fecha" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Períodos de intensificación</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-18-nuevo-rol.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de creación de un rol en tamaño completo">
+              <img src="/assets/senda/senda-18-nuevo-rol.webp" alt="Formulario para crear un rol y asignarle permisos agrupados" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Creación de un rol</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-19-personal.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de gestión de personal en tamaño completo">
+              <img src="/assets/senda/senda-19-personal.webp" alt="Listado de personal de la institución con documento y estado de cuenta" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Gestión de personal</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-06-cursos.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de cursos de la institución en tamaño completo">
+              <img src="/assets/senda/senda-06-cursos.webp" alt="Listado de cursos con resolución, año y sección" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Cursos de la institución</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-07-curso-detalle.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de detalle de un curso en tamaño completo">
+              <img src="/assets/senda/senda-07-curso-detalle.webp" alt="Detalle de curso: preceptores a cargo" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Detalle de un curso</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-08-resoluciones.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de resoluciones y tecnicaturas en tamaño completo">
+              <img src="/assets/senda/senda-08-resoluciones.webp" alt="Gestión de resoluciones, formación general y tecnicaturas" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Resoluciones y tecnicaturas</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-03-estudiantes.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del listado de estudiantes en tamaño completo">
+              <img src="/assets/senda/senda-03-estudiantes.webp" alt="Listado de estudiantes con documento, fechas y estado" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Listado de estudiantes</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-04-estudiante-perfil.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del perfil de un estudiante en tamaño completo">
+              <img src="/assets/senda/senda-04-estudiante-perfil.webp" alt="Perfil del estudiante con sus datos personales" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Perfil del estudiante</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-11-gestion-diaria-curso.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de materias del curso en tamaño completo">
+              <img src="/assets/senda/senda-11-gestion-diaria-curso.webp" alt="Materias de un curso con accesos a libro de temas, calificaciones y asistencia" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Materias del curso</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-12-libro-temas.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del libro de temas completo en tamaño completo">
+              <img src="/assets/senda/senda-12-libro-temas.webp" alt="Libro de temas completo de un curso, organizado por materia" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Libro de temas completo</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-13-libro-temas-clases.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de clases registradas en tamaño completo">
+              <img src="/assets/senda/senda-13-libro-temas-clases.webp" alt="Clases registradas de una materia con contenidos y observaciones" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Clases registradas</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <a href="/assets/senda/senda-09-calificaciones.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de carga de calificaciones en tamaño completo">
+              <img src="/assets/senda/senda-09-calificaciones.webp" alt="Carga de calificaciones por cuatrimestre e intensificación" width="1600" height="1000" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Carga de calificaciones</figcaption>
+          </figure>
+        </div>
+      </details>
+    </section>
+
+    <footer class="case-end">
+      <a class="back-link" href="/?proyecto=senda#proyectos"><span aria-hidden="true">←</span> Volver a la mesa</a>
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Martiniano Gavotti</p>
+    </div>
+  </footer>
+</body>
+</html>

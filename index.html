@@ -1,910 +1,216 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es-AR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Martiniano Gavotti — Desarrollador Full Stack</title>
-  <meta name="description" content="Desarrollador full stack (PHP · Laravel) y analista de sistemas. Diseño, modelo y construyo sistemas de gestión de punta a punta: del relevamiento a la entrega.">
-
-  <!-- Open Graph (para compartir en LinkedIn / redes) -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La mesa de Marto — Martiniano Gavotti</title>
+  <meta name="description" content="Portfolio de Martiniano Gavotti, desarrollador full stack de Olavarría. Explorá mis proyectos desde el escritorio.">
+  <meta name="theme-color" content="#f7f3fb">
+  <link rel="canonical" href="https://martohg.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Martiniano Gavotti — Desarrollador Full Stack">
-  <meta property="og:description" content="Convierto procesos de papel en sistemas que funcionan. Portfolio: proyectos, skills y servicios.">
+  <meta property="og:url" content="https://martohg.github.io/">
+  <meta property="og:title" content="La mesa de Marto — Martiniano Gavotti">
+  <meta property="og:description" content="Proyectos de software sobre un escritorio 3D.">
   <meta property="og:locale" content="es_AR">
-  <!-- TODO: cuando exista la imagen, descomentar y subir assets/og.png (1200x630) -->
-  <!-- <meta property="og:image" content="/assets/og.png"> -->
-
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-
-  <!-- Tipografías: Archivo + Chivo + Chivo Mono (Omnibus-Type, Argentina) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Chivo:wght@300;400;700&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <script type="module" crossorigin src="/assets/main-bFaU5YOh.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="stylesheet" crossorigin href="/assets/main-YyuaWcH-.css">
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/desk.css">
+  <script type="module" src="/assets/desk.js"></script>
 </head>
-<body>
-
-  <a class="saltar" href="#contenido">Saltar al contenido</a>
-
-  <!-- Línea de margen (firma visual: el margen rojo de un libro de registro) -->
-  <div class="margen" aria-hidden="true"></div>
-
-  <header class="nav" id="nav">
-    <a class="nav__logo" href="#inicio" aria-label="Ir al inicio">MG<span class="nav__logo-punto">.</span></a>
-    <nav class="nav__links" aria-label="Navegación principal">
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#skills">Skills</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#servicios">Servicios</a>
-    </nav>
-    <a class="boton boton--chico" href="#contacto">Contacto</a>
+<body id="inicio">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#inicio"><span class="brand-icon" aria-hidden="true"></span>La mesa de Marto</a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
 
-  <main id="contenido" tabindex="-1">
+  <main class="wrap" id="contenido" tabindex="-1">
+    <div class="intro">
+      <div>
+        <h1>Martiniano Gavotti</h1>
+        <p class="intro-role">Desarrollador full stack <span aria-hidden="true">·</span> Olavarría, Argentina</p>
+      </div>
+      <p class="intro-bio">Hago sistemas de gestión con PHP y Laravel. Primero escucho cómo se trabaja.</p>
+    </div>
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="inicio">
-      <p class="hero__eyebrow mono">Martiniano Gavotti · Desarrollador Full Stack</p>
-      <h1 class="hero__titulo" id="hero-titulo">
-        Convierto procesos de papel en <em>sistemas que funcionan</em>.
-      </h1>
-      <p class="hero__bajada">
-        Desarrollador full stack (PHP · Laravel) y analista de sistemas en el último año
-        de la carrera. Diseño, modelo y construyo software de gestión de punta a punta:
-        del relevamiento a la entrega.
-      </p>
-      <div class="hero__acciones">
-        <a class="boton" href="#proyectos">Ver proyectos</a>
-        <a class="boton boton--fantasma" href="#contacto">Contactame</a>
-        <!-- Puerta al portfolio jugable: recién al entrar se descargan PixiJS y los sprites -->
-        <a class="portal" href="/mundo/">
-          <img class="portal__aventurero" src="/assets/adventurer/adventurer_idle/frame-01.png" alt="" width="32" height="48">
-          <span class="portal__pregunta mono">¿Portfolio aburrido?</span>
-          <span class="portal__accion">Entrá al mundo <span aria-hidden="true">→</span></span>
-        </a>
+    <section class="work" id="proyectos" aria-labelledby="proyectos-titulo">
+      <div class="desk-grid">
+        <div class="diorama" data-diorama data-project="senda" role="img" aria-label="Escritorio verde en miniatura. Un gato atigrado duerme sobre las carpetas y empuja la que elegís.">
+          <picture class="desk-poster">
+            <source media="(max-width: 640px)" srcset="/assets/desk/mobile.webp">
+            <img src="/assets/desk/desktop.webp" alt="" width="853" height="462" decoding="async" fetchpriority="high">
+          </picture>
+        </div>
+
+        <div class="project-index">
+          <h2 id="proyectos-titulo">Proyectos</h2>
+          <p class="index-hint">Elegí una carpeta.</p>
+          <div class="project-tabs" data-project-tabs aria-labelledby="proyectos-titulo">
+            <a class="project-tab" data-project="senda" data-selected href="/proyectos/senda/">
+              <span class="folder-stamp" aria-hidden="true"></span>
+              <span><strong>Senda</strong><small>Gestión escolar</small></span>
+              <span class="tab-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="project-tab" data-project="el-refugio" href="/proyectos/el-refugio/">
+              <span class="folder-stamp" aria-hidden="true"></span>
+              <span><strong>El Refugio</strong><small>Tienda de muebles</small></span>
+              <span class="tab-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="project-tab" data-project="labor-legislativa" href="/proyectos/labor-legislativa/">
+              <span class="folder-stamp" aria-hidden="true"></span>
+              <span><strong>Labor legislativa</strong><small>Catálogo público</small></span>
+              <span class="tab-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="project-tab" data-project="lomaton" href="/proyectos/lomaton/">
+              <span class="folder-stamp" aria-hidden="true"></span>
+              <span><strong>LOMATÓN</strong><small>Visión por computadora</small></span>
+              <span class="tab-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="project-tab" data-project="respawn" href="/proyectos/respawn/">
+              <span class="folder-stamp" aria-hidden="true"></span>
+              <span><strong>Respawn Informática</strong><small>Servicios de informática</small></span>
+              <span class="tab-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="project-tab" data-project="respawn-skills" data-folder-label="Skills" href="/proyectos/respawn-skills/">
+              <span class="folder-stamp" aria-hidden="true"></span>
+              <span><strong>Respawn Skills</strong><small>Guías de trabajo</small></span>
+              <span class="tab-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
       </div>
 
-      <p class="hero__scroll mono" aria-hidden="true">Deslizá para leer el registro ↓</p>
-    </section>
-
-    <!-- ============ SOBRE MÍ ============ -->
-    <section class="registro" id="sobre-mi">
-      <header class="registro__cabecera">
-        <span class="registro__num mono">Registro N.º 01</span>
-        <h2 class="registro__titulo">Sobre mí</h2>
-        <span class="registro__regla" aria-hidden="true"></span>
-      </header>
-
-      <div class="sobremi">
-        <figure class="sobremi__retrato">
-          <img src="/assets/foto.jpg" alt="Martiniano Gavotti, de traje" width="810" height="1080" loading="lazy">
-        </figure>
-
-        <div class="sobremi__texto">
-          <p>
-            Soy Martiniano, desarrollador de Argentina. Me estoy formando como
-            <strong>Analista en Sistemas</strong> —cursando último año de la carrera— y me
-            especializo en <strong>sistemas de gestión</strong>: software que ordena el trabajo
-            diario de organizaciones reales.
-          </p>
-          <p>
-            Programo para ordenar el caos: me gusta convertir procesos manuales en
-            sistemas que funcionan solos. Vengo del análisis de sistemas, así que
-            pienso el software antes de escribirlo. Con muchas ganas de sumarme a un
-            equipo y aprender de gente con más recorrido.
-          </p>
-
-          <h3 class="sobremi__subtitulo mono">Formación</h3>
-          <ol class="timeline">
-            <li class="timeline__item">
-              <span class="timeline__fecha mono">2024</span>
-              <span>Inicio de la carrera Analista en Sistemas</span>
-            </li>
-            <li class="timeline__item">
-              <span class="timeline__fecha mono">Ene 2026</span>
-              <span>Primer proyecto comercial como desarrollador</span>
-            </li>
-            <li class="timeline__item">
-              <span class="timeline__fecha mono">2026</span>
-              <span>Senda: primeros avances presentados al cliente · último año de la carrera</span>
-            </li>
-          </ol>
-
-          <!-- TODO: activar cuando exista el archivo assets/cv-martiniano-gavotti.pdf
-          <a class="boton boton--fantasma" href="/assets/cv-martiniano-gavotti.pdf" download>Descargar CV</a>
-          -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SKILLS ============ -->
-    <section class="registro" id="skills">
-      <header class="registro__cabecera">
-        <span class="registro__num mono">Registro N.º 02</span>
-        <h2 class="registro__titulo">Skills</h2>
-        <span class="registro__regla" aria-hidden="true"></span>
-      </header>
-
-      <p class="registro__intro">
-        Prefiero decirte exactamente qué manejo y qué estoy aprendiendo.
-      </p>
-
-      <div class="skills">
-        <div class="skills__grupo">
-          <h3 class="skills__etiqueta mono">Stack principal — uso a diario</h3>
-          <ul class="skills__lista">
-            <li class="chip chip--principal">PHP</li>
-            <li class="chip chip--principal">Laravel</li>
-            <li class="chip">JavaScript</li>
-            <li class="chip">HTML · CSS</li>
-            <li class="chip">MySQL</li>
-            <li class="chip">Git</li>
-          </ul>
-        </div>
-        <div class="skills__grupo">
-          <h3 class="skills__etiqueta mono">Base sólida</h3>
-          <ul class="skills__lista">
-            <li class="chip">Python — algoritmos y estructuras de datos</li>
-            <li class="chip">Análisis y modelado de sistemas (UML · DER)</li>
-          </ul>
-        </div>
-        <div class="skills__grupo">
-          <h3 class="skills__etiqueta mono">En aprendizaje</h3>
-          <ul class="skills__lista">
-            <li class="chip chip--aprendiendo">React</li>
-            <li class="chip chip--aprendiendo">Django</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PROYECTOS ============ -->
-    <section class="registro" id="proyectos">
-      <header class="registro__cabecera">
-        <span class="registro__num mono">Registro N.º 03</span>
-        <h2 class="registro__titulo">Proyectos</h2>
-        <span class="registro__regla" aria-hidden="true"></span>
-      </header>
-
-      <!-- ---- Ficha: Senda ---- -->
-      <article class="ficha">
-        <header class="ficha__cabecera">
-          <div>
-            <p class="ficha__num mono">Ficha 01</p>
-            <h3 class="ficha__nombre">Senda</h3>
-            <p class="ficha__tipo mono">Proyecto grupal · Sistema de gestión educativa</p>
+      <div class="project-previews">
+        <article class="project-preview" id="vista-senda">
+          <div class="preview-copy">
+            <p class="project-context">Gestión escolar · En equipo</p>
+            <h3>Senda</h3>
+            <p>Trabajé en el RITE y el libro de temas para que la escuela pueda generarlos a partir de sus registros diarios.</p>
+            <a class="case-link" href="/proyectos/senda/" aria-label="Leer el caso de Senda">Leer el caso <span aria-hidden="true">→</span></a>
           </div>
-          <span class="ficha__estado mono">En desarrollo — primeros avances presentados al cliente</span>
-        </header>
-
-        <dl class="ficha__detalle">
-          <div class="ficha__campo">
-            <dt class="mono">Problema</dt>
-            <dd>
-              Las instituciones educativas registran su actividad diaria a mano:
-              planillas dispersas, doble carga de datos y documentos obligatorios
-              —como el RITE y el libro de temas— que se arman copiando información
-              que ya existe en otro lado.
-            </dd>
+          <div class="preview-media">
+            <img src="/assets/senda/senda-02-dashboard.webp" alt="Panel de Senda con accesos a estudiantes, cursos y personal" width="1600" height="1000" decoding="async">
           </div>
-          <div class="ficha__campo">
-            <dt class="mono">Solución</dt>
-            <dd>
-              Un sistema que cubre la gestión escolar de punta a punta: instituciones,
-              cursos, materias, docentes, estudiantes, asistencia, calificaciones,
-              intensificaciones y planes de acompañamiento. Con esa información cargada
-              una sola vez, el sistema genera automáticamente los documentos legales
-              —el libro de temas y, sobre todo, el RITE, el corazón del sistema— en
-              lugar de armarlos a mano.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Mi rol</dt>
-            <dd>
-              <p>
-                En la documentación trabajé a la par del equipo, en las mismas etapas
-                de relevamiento y modelado de dominio. En el desarrollo construí varios
-                módulos de punta a punta:
-              </p>
-              <ul class="ficha__lista">
-                <li><strong>Configuración institucional:</strong> alta de instituciones, turnos y modelos de intensificación.</li>
-                <li><strong>Roles y permisos:</strong> control de acceso basado en roles (Spatie Permission) para los distintos perfiles de usuario (directivos, preceptores, docentes).</li>
-                <li><strong>Libro de temas:</strong> carga de clases desde la interfaz y generación del PDF legal correspondiente.</li>
-                <li><strong>RITE:</strong> recopilación de los datos del estudiante (asistencia, calificaciones, intensificaciones) y armado del documento imprimible.</li>
-                <li><strong>Asistencia (en desarrollo):</strong> registro de asistencia institucional y por materia, colaborando junto a otros compañeros del equipo.</li>
-              </ul>
-              <p>
-                Es una etapa temprana, pero con base sólida: arquitectura por dominios
-                (Curso, Estudiante, Asistencia, Calificación, Intensificación, EDTE),
-                cobertura de tests con Pest y generación de PDFs con dompdf. El resto de
-                los módulos —estudiantes, calificaciones, resoluciones— los desarrollaron
-                mis compañeros de equipo.
-              </p>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Stack</dt>
-            <dd>PHP · Laravel 12 · MySQL · Bootstrap · HTMX · Spatie Permission · Pest (testing)</dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Demo</dt>
-            <dd>
-              <a class="boton boton--fantasma boton--chico" href="https://sendaedu.com.ar/" target="_blank" rel="noopener">Ver la landing de la demo ↗</a>
-            </dd>
-          </div>
-        </dl>
-
-        <div class="ficha__galeria ficha__galeria--miniaturas">
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-01-login.webp" target="_blank" rel="noopener" aria-label="Ver captura de inicio de sesión en tamaño completo">
-              <img src="/assets/senda/senda-01-login.webp" alt="Pantalla de inicio de sesión de Senda" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Inicio de sesión</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-02-dashboard.webp" target="_blank" rel="noopener" aria-label="Ver captura del panel principal en tamaño completo">
-              <img src="/assets/senda/senda-02-dashboard.webp" alt="Panel principal con accesos a estudiantes, resoluciones, cursos y personal" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Panel principal</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-16-institucion.webp" target="_blank" rel="noopener" aria-label="Ver captura de datos de la institución en tamaño completo">
-              <img src="/assets/senda/senda-16-institucion.webp" alt="Configuración de la institución: identificación, ubicación y turnos" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Datos de la institución</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-15-configuracion.webp" target="_blank" rel="noopener" aria-label="Ver captura del panel de configuración en tamaño completo">
-              <img src="/assets/senda/senda-15-configuracion.webp" alt="Panel de configuración: roles, resoluciones, institución, EDTE y periodos" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Panel de configuración</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-20-periodos.webp" target="_blank" rel="noopener" aria-label="Ver captura de períodos de intensificación en tamaño completo">
-              <img src="/assets/senda/senda-20-periodos.webp" alt="Listado de períodos de intensificación por fecha" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Períodos de intensificación</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-17-roles.webp" target="_blank" rel="noopener" aria-label="Ver captura de roles y permisos en tamaño completo">
-              <img src="/assets/senda/senda-17-roles.webp" alt="Roles del sistema con sus permisos asignados (Spatie Permission)" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Roles y permisos</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-18-nuevo-rol.webp" target="_blank" rel="noopener" aria-label="Ver captura de creación de un rol en tamaño completo">
-              <img src="/assets/senda/senda-18-nuevo-rol.webp" alt="Formulario para crear un rol y asignarle permisos agrupados" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Creación de un rol</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-19-personal.webp" target="_blank" rel="noopener" aria-label="Ver captura de gestión de personal en tamaño completo">
-              <img src="/assets/senda/senda-19-personal.webp" alt="Listado de personal de la institución con documento y estado de cuenta" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Gestión de personal</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-06-cursos.webp" target="_blank" rel="noopener" aria-label="Ver captura de cursos de la institución en tamaño completo">
-              <img src="/assets/senda/senda-06-cursos.webp" alt="Listado de cursos con resolución, año y sección" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Cursos de la institución</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-07-curso-detalle.webp" target="_blank" rel="noopener" aria-label="Ver captura de detalle de un curso en tamaño completo">
-              <img src="/assets/senda/senda-07-curso-detalle.webp" alt="Detalle de curso: preceptores a cargo" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Detalle de un curso</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-08-resoluciones.webp" target="_blank" rel="noopener" aria-label="Ver captura de resoluciones y tecnicaturas en tamaño completo">
-              <img src="/assets/senda/senda-08-resoluciones.webp" alt="Gestión de resoluciones, formación general y tecnicaturas" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Resoluciones y tecnicaturas</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-03-estudiantes.webp" target="_blank" rel="noopener" aria-label="Ver captura del listado de estudiantes en tamaño completo">
-              <img src="/assets/senda/senda-03-estudiantes.webp" alt="Listado de estudiantes con documento, fechas y estado" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Listado de estudiantes</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-04-estudiante-perfil.webp" target="_blank" rel="noopener" aria-label="Ver captura del perfil de un estudiante en tamaño completo">
-              <img src="/assets/senda/senda-04-estudiante-perfil.webp" alt="Perfil del estudiante con sus datos personales" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Perfil del estudiante</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-10-gestion-diaria.webp" target="_blank" rel="noopener" aria-label="Ver captura de gestión diaria por curso en tamaño completo">
-              <img src="/assets/senda/senda-10-gestion-diaria.webp" alt="Selección de curso para gestionar libro de temas, calificaciones y asistencia" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Gestión diaria por curso</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-11-gestion-diaria-curso.webp" target="_blank" rel="noopener" aria-label="Ver captura de materias del curso en tamaño completo">
-              <img src="/assets/senda/senda-11-gestion-diaria-curso.webp" alt="Materias de un curso con accesos a libro de temas, calificaciones y asistencia" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Materias del curso</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-12-libro-temas.webp" target="_blank" rel="noopener" aria-label="Ver captura del libro de temas completo en tamaño completo">
-              <img src="/assets/senda/senda-12-libro-temas.webp" alt="Libro de temas completo de un curso, organizado por materia" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Libro de temas completo</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-13-libro-temas-clases.webp" target="_blank" rel="noopener" aria-label="Ver captura de clases registradas en tamaño completo">
-              <img src="/assets/senda/senda-13-libro-temas-clases.webp" alt="Clases registradas de una materia con contenidos y observaciones" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Clases registradas</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-14-registrar-clase.webp" target="_blank" rel="noopener" aria-label="Ver captura del formulario para registrar una clase en tamaño completo">
-              <img src="/assets/senda/senda-14-registrar-clase.webp" alt="Formulario para registrar una clase dictada" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Registrar una clase</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-09-calificaciones.webp" target="_blank" rel="noopener" aria-label="Ver captura de carga de calificaciones en tamaño completo">
-              <img src="/assets/senda/senda-09-calificaciones.webp" alt="Carga de calificaciones por cuatrimestre e intensificación" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Carga de calificaciones</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/senda/senda-05-rite.webp" target="_blank" rel="noopener" aria-label="Ver captura de la vista previa del RITE en tamaño completo">
-              <img src="/assets/senda/senda-05-rite.webp" alt="Vista previa del RITE con calificaciones y materias pendientes" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Vista previa del RITE</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <!-- ---- Ficha: proyecto comercial ---- -->
-      <article class="ficha">
-        <header class="ficha__cabecera">
-          <div>
-            <p class="ficha__num mono">Ficha 02</p>
-            <h3 class="ficha__nombre">Plataforma de labor legislativa</h3>
-            <p class="ficha__tipo mono">Proyecto individual · Desarrollo comercial</p>
-          </div>
-          <span class="ficha__estado mono">Finalizado — en revisión</span>
-        </header>
-
-        <dl class="ficha__detalle">
-          <div class="ficha__campo">
-            <dt class="mono">Problema</dt>
-            <dd>
-              Un concejal necesitaba una forma moderna y transparente de publicar su
-              labor —proyectos y ordenanzas— y que los vecinos pudieran encontrarla,
-              consultarla y compartirla con facilidad. Hasta entonces esa información
-              estaba dispersa y era difícil de difundir.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Solución</dt>
-            <dd>
-              Una plataforma web con un catálogo público de proyectos y ordenanzas
-              —tarjetas con imagen, categoría y fecha—, un buscador con filtros por tipo
-              y categoría y ordenamiento, y una ficha individual de cada iniciativa. Cada
-              proyecto se comparte por enlace directo y código QR, y adjunta su PDF
-              oficial. Un panel de administración con roles (administrador y colaborador)
-              permite cargar, editar y gestionar los proyectos y los usuarios.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Mi rol</dt>
-            <dd>
-              Lo desarrollé de punta a punta, en solitario: modelado de datos, el sitio
-              público con el buscador, el panel de administración con roles tipados y
-              policies de permisos, el ABM de proyectos con carga de PDF y generación
-              automática del código QR, las imágenes de portada y una capa de servicios
-              cubierta con tests.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Stack</dt>
-            <dd>PHP · Laravel 12 · MySQL · Tailwind CSS · Alpine.js · Blade</dd>
-          </div>
-        </dl>
-
-        <div class="ficha__galeria">
-          <figure class="ficha__captura">
-            <a href="/assets/santana-catalogo.webp" target="_blank" rel="noopener" aria-label="Ver captura del catálogo público en tamaño completo">
-              <img src="/assets/santana-catalogo.webp" alt="Catálogo público: tarjetas de proyectos y ordenanzas con categoría y fecha" loading="lazy" width="2560" height="1720">
-            </a>
-            <figcaption class="mono">Catálogo público</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/santana-buscador.webp" target="_blank" rel="noopener" aria-label="Ver captura del buscador en tamaño completo">
-              <img src="/assets/santana-buscador.webp" alt="Buscador legislativo con filtros por tipo, categoría y ordenamiento" loading="lazy" width="2560" height="1720">
-            </a>
-            <figcaption class="mono">Buscador y filtros</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/santana-panel.webp" target="_blank" rel="noopener" aria-label="Ver captura del panel de administración en tamaño completo">
-              <img src="/assets/santana-panel.webp" alt="Panel de administración: métricas y últimos documentos cargados" loading="lazy" width="2560" height="1720">
-            </a>
-            <figcaption class="mono">Panel de administración</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <!-- ---- Ficha: LOMATÓN 2026 ---- -->
-      <article class="ficha">
-        <header class="ficha__cabecera">
-          <div>
-            <p class="ficha__num mono">Ficha 03</p>
-            <h3 class="ficha__nombre">Estación de visión para cadena de arrastre</h3>
-            <p class="ficha__tipo mono">Proyecto en equipo · Hackathon industrial · Visión por computadora</p>
-          </div>
-          <span class="ficha__estado mono">2.º puesto — LOMATÓN 2026, Olavarría</span>
-        </header>
-
-        <dl class="ficha__detalle">
-          <div class="ficha__campo">
-            <dt class="mono">Problema</dt>
-            <dd>
-              <p>
-                En la línea de calcinación del horno 6 de la planta de Olavarría, la cal
-                a granel viaja por un redler: cuatro cadenas de arrastre y unos 200 metros
-                de recorrido. Si una cadena se corta, la línea para. Hoy la rotura se
-                detecta con una persona que recorre el equipo en marcha cada dos horas y
-                mira, entre polvo de cal y calor.
-              </p>
-              <p>
-                Eso deja ventanas ciegas de dos horas, depende del criterio de cada
-                operador y expone gente al ambiente sólo para observar. Y lo que hay que
-                encontrar es chico: un perno flojo, una chaveta que falta, un eslabón
-                fisurado, repartidos entre miles de eslabones.
-              </p>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">La idea que ordena todo</dt>
-            <dd>
-              La cadena es un circuito cerrado. No hay que instrumentar 200 metros:
-              alcanza con una estación de visión fija y dejar que la cadena pase por
-              delante. En una vuelta completa queda inspeccionado el 100 % de los
-              eslabones. El movimiento lo pone el proceso, no el algoritmo.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Solución</dt>
-            <dd>
-              <p>Sobre esa idea propusimos tres capas que se suman, no se reemplazan:</p>
-              <ul class="ficha__lista">
-                <li><strong>Capa 0 — hardware determinístico:</strong> sensores magnéticos, underspeed switches, pares de sensores inductivos y monitoreo de corriente del motor. Protección de corte duro, siempre activa, sin depender de IA. Es complementaria a la visión, no competidora.</li>
-                <li><strong>Etapa A — medición matemática:</strong> la estación mide la elongación de la cadena contra el umbral estándar de reemplazo de 2 a 3 %. Es geometría, no modelo entrenado: funciona desde el día uno, sin dataset.</li>
-                <li><strong>Etapa B — machine learning:</strong> se suma de forma incremental, recién cuando el sistema acumuló datos propios.</li>
-              </ul>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">El diferencial: indexación de eslabones</dt>
-            <dd>
-              <p>
-                Cada eslabón recibe un ID persistente y un historial de salud propio, una
-                especie de historial clínico. Con eso el sistema deja de decir "hay una
-                falla en la cadena 3" y pasa a decir "el eslabón 412 lleva seis días con
-                elongación creciente".
-              </p>
-              <p>
-                Esa trazabilidad eslabón por eslabón es lo que no ofrecen los sistemas
-                comerciales, y además es la que genera el volante de datos que después
-                habilita la Etapa B. El cambio de fondo es pasar de inspección periódica
-                por criterio humano a monitoreo por condición: el operador atiende alertas
-                priorizadas en lugar de recorrer, y deja de exponerse al calor y al polvo
-                sólo para mirar.
-              </p>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">La demo</dt>
-            <dd>
-              <p>
-                Visión clásica con OpenCV sobre video real de la planta, corriendo local y
-                sin entrenar nada. El problema no era detectar: era que no existe un
-                dataset de fallas, porque cuando una chaveta falta se arregla y se sigue.
-                Así que pintamos el defecto a mano —un travesaño amarillo sobre la cadena
-                real— y usamos el color como reemplazo del defecto para construir y validar
-                toda la cadena de procesamiento: ventana de inspección, umbrales,
-                agrupación de eventos, alertas. El día que haya fallas reales se cambia el
-                detector y el resto del sistema queda igual.
-              </p>
-              <p>
-                Dos decisiones que sostienen el demo: la ventana de inspección fija, que es
-                lo que vuelve selectiva la detección (mismo umbral, cero eventos en el video
-                sano y dos en el de defecto), y el autodiagnóstico, que mide nitidez y avisa
-                "no puedo verificar este segmento" en lugar de decir "sano". Un falso "todo
-                bien" por una lente sucia es peor que no tener sensor. Como métrica
-                experimental aparte, medimos el paso entre pernos con HoughCircles: es el
-                proxy de elongación de la Etapa A. Lo más difícil, igual, no fue el código:
-                fue conseguir contraste visual en el video.
-              </p>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Mi rol</dt>
-            <dd>
-              La idea la planteé yo: la cadena como circuito cerrado, una estación de
-              visión fija en lugar de instrumentar 200 metros, y el historial de salud
-              por eslabón. Y el prototipo lo construí completo, de la calibración sobre
-              los videos reales de planta a la detección, el autodiagnóstico de calidad
-              de imagen y la maqueta de indexación.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Contexto</dt>
-            <dd>
-              Hackathon organizado por Loma Negra, la Fundación Loma Negra, Ferrosur y la
-              FIO/UNICEN, el 26 y 27 de agosto de 2026 en Olavarría. Desafío 2, "¡Que no
-              pare, que no pare!". Lo presentamos como CHAIN TEAM y salimos segundos.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Stack</dt>
-            <dd>Python · OpenCV (visión clásica, sin modelos entrenados) · NumPy · Streamlit</dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Repositorio</dt>
-            <dd>
-              <a class="boton boton--fantasma boton--chico" href="https://github.com/MartoHG/LOMATON---CHAIN-TEAM" target="_blank" rel="noopener">Ver en GitHub ↗</a>
-            </dd>
-          </div>
-        </dl>
-
-        <div class="ficha__galeria">
-          <figure class="ficha__captura">
-            <a href="/assets/lomaton/lomaton-01-deteccion.webp" target="_blank" rel="noopener" aria-label="Ver captura de la detección sobre video real en tamaño completo">
-              <img src="/assets/lomaton/lomaton-01-deteccion.webp" alt="Tres cuadros del detector: cadena real sin defecto, travesaño pintado marcado como falta de chaveta, y tramo fuera de foco marcado como calidad insuficiente" loading="lazy" width="904" height="616">
-            </a>
-            <figcaption class="mono">Detección sobre video real</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/lomaton/lomaton-02-indexacion.webp" target="_blank" rel="noopener" aria-label="Ver diagrama de indexación de eslabones en tamaño completo">
-              <img src="/assets/lomaton/lomaton-02-indexacion.webp" alt="Diagrama del circuito cerrado de la cadena: estación de visión fija, encoder en la rueda motriz y eslabones numerados con su estado de salud" loading="lazy" width="1034" height="484">
-            </a>
-            <figcaption class="mono">Indexación de eslabones</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <!-- ---- Ficha: El Refugio ---- -->
-      <article class="ficha">
-        <header class="ficha__cabecera">
-          <div>
-            <p class="ficha__num mono">Ficha 04</p>
-            <h3 class="ficha__nombre">El Refugio</h3>
-            <p class="ficha__tipo mono">Proyecto individual · Tienda online con panel de gestión</p>
-          </div>
-          <span class="ficha__estado mono">Sin publicar todavía — falta la puesta en producción</span>
-        </header>
-
-        <dl class="ficha__detalle">
-          <div class="ficha__campo">
-            <dt class="mono">Problema</dt>
-            <dd>
-              <p>
-                El Refugio es una forrajería de Olavarría que quería vender muebles de
-                jardín a todo el país. Una tienda estándar no le servía: los muebles viajan
-                por expreso y el costo de ese envío recién se conoce al cotizar cada pedido.
-                Cobrar en el checkout, como hace cualquier tienda, era cobrar sin saber el
-                total.
-              </p>
-              <p>
-                Además, muchos compradores tienen poca experiencia comprando online, y
-                quien opera la tienda todos los días no tiene un perfil técnico.
-              </p>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">La idea que ordena todo</dt>
-            <dd>
-              El pedido se crea antes que el pago. El cliente confirma su carrito sin pagar;
-              el negocio le escribe por WhatsApp, cotiza el expreso y carga el costo; y recién
-              cuando el cliente acepta el total se habilita un link de pago. Nadie paga sin
-              saber cuánto es, y la venta online conserva el trato directo del local.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Solución</dt>
-            <dd>
-              <ul class="ficha__lista">
-                <li><strong>Tienda:</strong> catálogo con buscador y filtros por categoría, sección de ofertas, productos con variantes de color, agotados a la vista y carrito que funciona sin crear una cuenta.</li>
-                <li><strong>Pedidos del cliente:</strong> checkout con email verificado y seguimiento de cada pedido con estados en lenguaje simple.</li>
-                <li><strong>Link de pago:</strong> se abre sin iniciar sesión y cobra con Mercado Pago dentro de la tienda: crédito en cuotas, débito o dinero en cuenta.</li>
-                <li><strong>Retiro en el local:</strong> un botón del carrito abre WhatsApp con el pedido ya escrito.</li>
-                <li><strong>Panel de gestión:</strong> una bandeja de tareas que ordena los pedidos por lo que hay que hacer (contactar, cotizar, esperando pago, despachar), más productos, precios y el contenido de la home, todo editable sin tocar código.</li>
-                <li><strong>Identidad propia:</strong> la dirección visual «La etiqueta» lleva títulos y precios a etiquetas colgantes, para que no parezca una plantilla, con letra cómoda, alto contraste y áreas táctiles grandes.</li>
-              </ul>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Lo difícil: que la plata cierre</dt>
-            <dd>
-              <ul class="ficha__lista">
-                <li><strong>Cuotas que no pierden plata:</strong> el porcentaje de cada modalidad se compensa, no se suma. Se cobra total ÷ (1 − porcentaje): con 20 %, un total de $100.000 se cobra $125.000 y no $120.000, y el redondeo va hacia arriba para que el negocio nunca reciba menos.</li>
-                <li><strong>Checkout Bricks en lugar de Checkout Pro:</strong> Pro sólo limita el máximo de cuotas, así que el cliente podría elegir menos y pagar un importe calculado para más. Con Bricks, el backend fija importe y cuotas en cada intento y rechaza lo que no coincida.</li>
-                <li><strong>El pago lo confirma el backend:</strong> nunca la redirección del navegador. El webhook se valida con firma y después se vuelve a consultar a Mercado Pago para verificar referencia, importe, moneda, medio y cuotas. La idempotencia evita cobros dobles y una conciliación cada 15 minutos recupera lo que se haya perdido en el camino.</li>
-                <li><strong>Un pago aprobado nunca se ignora:</strong> si llega para un pedido cancelado o reemplazado, queda en revisión y el panel avisa, para que lo resuelva una persona.</li>
-                <li><strong>Cuatro estados, no uno:</strong> pedido, contacto, pago y envío avanzan por separado, y cada pedido guarda una foto de sus precios y datos, para que un aumento no reescriba el historial.</li>
-                <li><strong>Aumentos masivos con vista previa:</strong> muestra valores anteriores y nuevos, aplica todo en una transacción, se rechaza si algo cambió desde la vista previa y queda en el historial.</li>
-              </ul>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Mi rol</dt>
-            <dd>
-              Lo llevé de punta a punta, en solitario: definí con el negocio las reglas de
-              venta y escribí la especificación completa, del modelo de datos a la
-              arquitectura (Controller → Form Request → Service → Model) y la dirección
-              visual. La implementación la hice con Claude Code, módulo por módulo, con más
-              de 300 tests sobre MySQL como control: primero el backend entero y después las
-              pantallas. También resolví las colas para procesar imágenes a WebP y enviar
-              emails, y un registro de auditoría de las acciones sensibles del panel.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Stack</dt>
-            <dd>PHP 8.4 · Laravel 13 · MySQL · Blade · Tailwind CSS 4 · HTMX · Mercado Pago (Checkout Bricks) · PHPUnit</dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Capturas</dt>
-            <dd>Tomadas del sistema corriendo en local, con datos y fotos de prueba.</dd>
-          </div>
-        </dl>
-
-        <div class="ficha__galeria">
-          <figure class="ficha__captura">
-            <a href="/assets/el-refugio/el-refugio-01-inicio.webp" target="_blank" rel="noopener" aria-label="Ver captura del inicio de la tienda en tamaño completo">
-              <img src="/assets/el-refugio/el-refugio-01-inicio.webp" alt="Inicio de la tienda: etiqueta naranja con el título Muebles de jardín para disfrutar el verano y franja de beneficios" loading="lazy" width="1920" height="956">
-            </a>
-            <figcaption class="mono">Inicio de la tienda</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/el-refugio/el-refugio-02-catalogo.webp" target="_blank" rel="noopener" aria-label="Ver captura del catálogo en tamaño completo">
-              <img src="/assets/el-refugio/el-refugio-02-catalogo.webp" alt="Catálogo de muebles con buscador, filtros por categoría y precios en etiquetas" loading="lazy" width="1920" height="956">
-            </a>
-            <figcaption class="mono">Catálogo y buscador</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/el-refugio/el-refugio-03-ofertas.webp" target="_blank" rel="noopener" aria-label="Ver captura de la sección de ofertas en tamaño completo">
-              <img src="/assets/el-refugio/el-refugio-03-ofertas.webp" alt="Sección de ofertas con productos marcados con el sello Oferta" loading="lazy" width="1920" height="956">
-            </a>
-            <figcaption class="mono">Ofertas</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/el-refugio/el-refugio-04-panel-pedidos.webp" target="_blank" rel="noopener" aria-label="Ver captura del panel de pedidos en tamaño completo">
-              <img src="/assets/el-refugio/el-refugio-04-panel-pedidos.webp" alt="Panel de pedidos: para contactar, para cotizar, esperando pago y para despachar, con aviso de un pago para revisar" loading="lazy" width="1920" height="956">
-            </a>
-            <figcaption class="mono">Panel: pedidos por etapa</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/el-refugio/el-refugio-05-panel-productos.webp" target="_blank" rel="noopener" aria-label="Ver captura del panel de productos en tamaño completo">
-              <img src="/assets/el-refugio/el-refugio-05-panel-productos.webp" alt="Panel de productos con buscador, filtros de agotados y ocultos, ofertas y colores" loading="lazy" width="1920" height="956">
-            </a>
-            <figcaption class="mono">Panel: productos</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <!-- ---- Ficha: Respawn Informática ---- -->
-      <article class="ficha">
-        <header class="ficha__cabecera">
-          <div>
-            <p class="ficha__num mono">Ficha 05</p>
-            <h3 class="ficha__nombre">Respawn Informática</h3>
-            <p class="ficha__tipo mono">Proyecto individual · Emprendimiento propio · Web a medida</p>
-          </div>
-          <span class="ficha__estado mono">Online — dominio propio pendiente</span>
-        </header>
-
-        <dl class="ficha__detalle">
-          <div class="ficha__campo">
-            <dt class="mono">Problema</dt>
-            <dd>
-              <p>
-                Respawn es mi emprendimiento en Olavarría: armado y mantenimiento de PC, y
-                desarrollo web para negocios. Necesitaba una web que consiguiera clientes y
-                que, al mismo tiempo, fuera la muestra de lo que puedo hacer en diseño web.
-                Una landing prolija no alcanzaba para lo segundo.
-              </p>
-              <p>
-                Además tenía que hablarles a dos públicos que no buscan lo mismo, alguien con
-                su PC y un comercio que necesita una web, y funcionar bien en el celular, que
-                es desde donde llega la mayoría, a través de Instagram.
-              </p>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">La idea que ordena todo</dt>
-            <dd>
-              El sitio es un arcade de 8 bits: el nombre ya lo pedía y el slogan lo cierra,
-              "le devolvemos la vida a tu PC". Pero debajo del juego hay HTML estático. El
-              contenido está en la página, Google lo lee, JavaScript aparece sólo donde hay
-              interacción y el efecto nunca le tapa la información a quien viene a consultar.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Solución</dt>
-            <dd>
-              <ul class="ficha__lista">
-                <li><strong>Pantalla de inicio:</strong> la escena «Nivel 01 · Olavarría», con un corazón pixel que sale detrás de un paisaje de la ciudad, con sus sierras, la cementera y el tanque de agua.</li>
-                <li><strong>Elegí tu misión:</strong> un selector de jugador, 1P Tu PC contra 2P Tu negocio, donde cada carta lleva a su mundo.</li>
-                <li><strong>Mundo PC, el taller:</strong> menú de misiones estilo RPG, power-ups que se leen como una tienda de ítems y un chequeo rápido con forma de terminal, que imprime un informe con la misión recomendada.</li>
-                <li><strong>Mundo negocio, el local:</strong> seis misiones, de landing page a sistema a medida, con la misma mecánica en otra ambientación.</li>
-                <li><strong>Niveles desbloqueados:</strong> el portfolio del negocio, con un cartucho por trabajo y su ficha con capturas.</li>
-                <li><strong>Continue?:</strong> el cierre de cada recorrido. Toda la web desemboca en WhatsApp, con un mensaje ya escrito según la misión elegida.</li>
-              </ul>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Decisiones técnicas</dt>
-            <dd>
-              <ul class="ficha__lista">
-                <li><strong>Una página por búsqueda:</strong> cada mundo tiene su URL, su título, su H1 y sus datos estructurados (LocalBusiness y Service), porque cada uno compite en Google por búsquedas distintas. Queda con noindex hasta conectar el dominio, para no perder SEO en la mudanza.</li>
-                <li><strong>Pixel art como texto:</strong> las ilustraciones son mapas de texto que se dibujan a SVG en el build, sobre una sola grilla. Sin imágenes pesadas y editables a mano.</li>
-                <li><strong>Animaciones con criterio:</strong> steps() para lo pixel y curvas de salida para la interfaz, sólo con transform y opacity, y todo apagable con prefers-reduced-motion.</li>
-                <li><strong>Entrar al mundo:</strong> con View Transitions, la PC de la carta vuela hasta su lugar en la página siguiente y se prende en cadena. Sin soporte del navegador, navega normal.</li>
-                <li><strong>Rediseño para celular:</strong> un cable de energía baja por la página, cada sección es un nodo y una barra fija deja WhatsApp siempre bajo el pulgar.</li>
-                <li><strong>Medido, no supuesto:</strong> Lighthouse marcaba un CLS de 0,156 en la página de servicios web porque la fuente del título llegaba tarde. Precargándola en celular bajó a 0,044, con rendimiento 99.</li>
-              </ul>
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Mi rol</dt>
-            <dd>
-              Fui cliente y desarrollador a la vez. Definí el concepto, la estructura y el
-              sistema visual, y cada pantalla pasó por dos etapas: primero un boceto estático
-              y, una vez aprobado, las animaciones.
-            </dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Stack</dt>
-            <dd>Astro 7 · JavaScript (módulos ES) · CSS con custom properties · SVG · View Transitions · JSON-LD · Cloudflare Pages</dd>
-          </div>
-          <div class="ficha__campo">
-            <dt class="mono">Demo</dt>
-            <dd>
-              <a class="boton boton--fantasma boton--chico" href="https://respawn-informatica.pages.dev/" target="_blank" rel="noopener">Ver la web ↗</a>
-            </dd>
-          </div>
-        </dl>
-
-        <div class="ficha__galeria">
-          <figure class="ficha__captura">
-            <a href="/assets/respawn/respawn-01-home.webp" target="_blank" rel="noopener" aria-label="Ver captura de la pantalla de inicio en tamaño completo">
-              <img src="/assets/respawn/respawn-01-home.webp" alt="Pantalla de inicio de Respawn: el corazón de la marca sale detrás de un paisaje pixel de Olavarría" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Pantalla de inicio</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/respawn/respawn-02-selector.webp" target="_blank" rel="noopener" aria-label="Ver captura del selector de mundos en tamaño completo">
-              <img src="/assets/respawn/respawn-02-selector.webp" alt="Selector de mundos: 1P Tu PC contra 2P Tu negocio" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Selector de mundos</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/respawn/respawn-03-mundo-pc.webp" target="_blank" rel="noopener" aria-label="Ver captura del Mundo PC en tamaño completo">
-              <img src="/assets/respawn/respawn-03-mundo-pc.webp" alt="Mundo PC, con la estación de PC y el menú de misiones" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Mundo PC</figcaption>
-          </figure>
-          <figure class="ficha__captura">
-            <a href="/assets/respawn/respawn-04-mundo-negocio.webp" target="_blank" rel="noopener" aria-label="Ver captura del Mundo negocio en tamaño completo">
-              <img src="/assets/respawn/respawn-04-mundo-negocio.webp" alt="Mundo negocio, con el local y el menú de misiones" loading="lazy" width="1600" height="1000">
-            </a>
-            <figcaption class="mono">Mundo negocio</figcaption>
-          </figure>
-        </div>
-      </article>
-    </section>
-
-    <!-- ============ SKILL: BLADE-HTMX ============ -->
-    <section class="registro" id="skill-blade-htmx">
-      <header class="registro__cabecera">
-        <span class="registro__num mono">Registro N.º 04</span>
-        <h2 class="registro__titulo">De Senda a una skill</h2>
-        <span class="registro__regla" aria-hidden="true"></span>
-      </header>
-
-      <p class="registro__intro">
-        Cuando en Senda varias personas empezamos a construir módulos en paralelo, hacía
-        falta un acuerdo compartido para que todo encajara sin descubrir desalineaciones
-        recién al integrar. Documenté esa convención de equipo —fragments de Blade, IDs
-        de contenedores, eventos HX-Trigger— bajo un principio rector: el estado de la
-        interfaz lo decide el backend, nunca JavaScript en el cliente. La empaqueté como
-        skill reutilizable para agentes de IA como Claude Code.
-      </p>
-
-      <a class="boton boton--fantasma" href="https://github.com/MartoHG/laravel-htmx-patterns" target="_blank" rel="noopener">Ver skill en GitHub</a>
-    </section>
-
-    <!-- ============ SERVICIOS ============ -->
-    <section class="registro" id="servicios">
-      <header class="registro__cabecera">
-        <span class="registro__num mono">Registro N.º 05</span>
-        <h2 class="registro__titulo">Servicios</h2>
-        <span class="registro__regla" aria-hidden="true"></span>
-      </header>
-
-      <p class="registro__intro">
-        Además de buscar mi primer puesto formal, tomo proyectos freelance.
-      </p>
-
-      <div class="servicios">
-        <article class="servicio">
-          <h3 class="servicio__titulo">Sistemas de gestión a medida</h3>
-          <p>
-            Software que ordena procesos reales: registros, turnos, stock, reportes.
-            Relevamiento incluido — primero entiendo tu proceso, después lo programo.
-          </p>
         </article>
-        <article class="servicio">
-          <h3 class="servicio__titulo">Sitios y aplicaciones web</h3>
-          <p>
-            Desarrollo web completo, del diseño a la puesta online. Sitios rápidos,
-            claros y fáciles de mantener.
-          </p>
+
+        <article class="project-preview" id="vista-el-refugio" hidden>
+          <div class="preview-copy">
+            <p class="project-context">Tienda en línea · Individual</p>
+            <h3>El Refugio</h3>
+            <p>Desarrollé un circuito de pedidos que permite cotizar el flete de los muebles antes de cobrar.</p>
+            <a class="case-link" href="/proyectos/el-refugio/" aria-label="Leer el caso de El Refugio">Leer el caso <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="preview-media">
+            <img src="/assets/el-refugio/el-refugio-01-inicio.webp" alt="Inicio de la tienda El Refugio, con una foto de sus muebles de jardín" width="1920" height="956" decoding="async">
+          </div>
         </article>
-        <article class="servicio">
-          <h3 class="servicio__titulo">Soporte y evolución</h3>
-          <p>
-            Mejoras, corrección de errores y nuevas funciones sobre sistemas
-            que ya están en uso.
-          </p>
+
+        <article class="project-preview" id="vista-labor-legislativa" hidden>
+          <div class="preview-copy">
+            <p class="project-context">Catálogo público · Individual</p>
+            <h3>Labor legislativa</h3>
+            <p>Reuní proyectos y ordenanzas dispersos en un buscador público, con descarga del PDF y enlaces para compartir.</p>
+            <a class="case-link" href="/proyectos/labor-legislativa/" aria-label="Leer el caso de la plataforma de labor legislativa">Leer el caso <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="preview-media">
+            <img src="/assets/santana-catalogo.webp" alt="Catálogo público de proyectos y ordenanzas con categorías y fechas" width="2560" height="1720" decoding="async">
+          </div>
+        </article>
+
+        <article class="project-preview" id="vista-lomaton" hidden>
+          <div class="preview-copy">
+            <p class="project-context">Visión por computadora · En equipo</p>
+            <h3>LOMATÓN</h3>
+            <p>Con mi equipo prototipé una estación que identifica los eslabones de una cadena industrial al pasar frente a una cámara.</p>
+            <a class="case-link" href="/proyectos/lomaton/" aria-label="Leer el caso de LOMATÓN">Leer el caso <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="preview-media">
+            <img src="/assets/lomaton/lomaton-01-deteccion.webp" alt="Tres cuadros del detector de LOMATÓN sobre un video de la cadena real" width="904" height="616" decoding="async">
+          </div>
+        </article>
+
+        <article class="project-preview" id="vista-respawn" hidden>
+          <div class="preview-copy">
+            <p class="project-context">Sitio de servicios · Individual</p>
+            <h3>Respawn Informática</h3>
+            <p>Armé mi sitio de informática en Olavarría con dos recorridos claros: soporte de PC y desarrollo web.</p>
+            <a class="case-link" href="/proyectos/respawn/" aria-label="Leer el caso de Respawn Informática">Leer el caso <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="preview-media">
+            <img src="/assets/respawn/respawn-01-home.webp" alt="Inicio de Respawn Informática, con las opciones de soporte de PC y desarrollo web" width="1600" height="1000" decoding="async">
+          </div>
+        </article>
+
+        <article class="project-preview" id="vista-respawn-skills" hidden>
+          <div class="preview-copy">
+            <p class="project-context">Guías de trabajo · Proyecto propio</p>
+            <h3>Respawn Skills</h3>
+            <p>Armé guías y plantillas para llevar los proyectos de Respawn desde el relevamiento hasta la revisión de entrega.</p>
+            <a class="case-link" href="/proyectos/respawn-skills/" aria-label="Leer el caso de Respawn Skills">Leer el caso <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="preview-media">
+            <img src="/assets/respawn-skills/repositorio.webp" alt="README del repositorio Respawn Skills en GitHub" width="838" height="470" decoding="async">
+          </div>
         </article>
       </div>
     </section>
 
-    <!-- ============ CONTACTO ============ -->
-    <section class="registro registro--final" id="contacto">
-      <header class="registro__cabecera">
-        <span class="registro__num mono">Registro N.º 06</span>
-        <h2 class="registro__titulo">Contacto</h2>
-        <span class="registro__regla" aria-hidden="true"></span>
-      </header>
-
-      <div class="contacto">
-        <h3 class="contacto__titulo">¿Hablamos?</h3>
-        <p class="contacto__texto">
-          Busco mi primer puesto formal como desarrollador y también tomo proyectos
-          freelance. Si tenés una propuesta, una búsqueda o simplemente una duda,
-          escribime — respondo.
-        </p>
-        <a class="boton boton--grande" href="mailto:marticontacto21@gmail.com">
-          marticontacto21@gmail.com
-        </a>
-        <ul class="contacto__redes">
-          <li><a class="contacto__red mono" href="https://www.linkedin.com/in/martiniano-gavotti-538bba18b" rel="me noopener" target="_blank">LinkedIn ↗</a></li>
-          <li><a class="contacto__red mono" href="https://github.com/MartoHG" rel="me noopener" target="_blank">GitHub ↗</a></li>
-        </ul>
+    <section class="about" id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <img class="portrait" src="/assets/foto.jpg" alt="Martiniano Gavotti" width="810" height="1080" loading="lazy" decoding="async">
+      <div class="about-copy">
+        <h2 id="sobre-mi-titulo">Sobre mí</h2>
+        <p>Soy de Olavarría y estoy cursando el último año de Analista en Sistemas. Empecé a trabajar en proyectos comerciales en 2026.</p>
+        <p>Me gusta participar desde el relevamiento hasta que el sistema está en uso. En Senda, por ejemplo, trabajé con el equipo para entender cómo se registraban las clases en la escuela y llevar ese proceso al sistema, desde la carga hasta el PDF del libro de temas.</p>
       </div>
+    </section>
+
+    <section class="tools" id="skills" aria-labelledby="tecnologias-titulo">
+      <h2 id="tecnologias-titulo">Tecnologías que uso</h2>
+      <ul class="tech-list">
+        <li><span class="tech-cat" aria-hidden="true"></span>PHP</li>
+        <li><span class="tech-cat" aria-hidden="true"></span>Laravel</li>
+        <li><span class="tech-cat" aria-hidden="true"></span>MySQL</li>
+        <li><span class="tech-cat" aria-hidden="true"></span>HTML y CSS</li>
+        <li><span class="tech-cat" aria-hidden="true"></span>JavaScript</li>
+        <li><span class="tech-cat" aria-hidden="true"></span>Python</li>
+        <li><span class="tech-cat" aria-hidden="true"></span>Git</li>
+      </ul>
+      <p>También estoy aprendiendo React y Django.</p>
+    </section>
+
+    <aside class="world" aria-labelledby="mundo-titulo">
+      <img src="/assets/adventurer/adventurer_idle/frame-01.png" alt="" width="32" height="48" loading="lazy">
+      <div>
+        <h2 id="mundo-titulo">El portfolio jugable</h2>
+        <p>También podés recorrer mis proyectos en un mundo inspirado en Terraria.</p>
+      </div>
+      <a class="text-link" href="/mundo/">Entrar al mundo <span aria-hidden="true">→</span></a>
+    </aside>
+
+    <section class="contact" id="contacto" aria-labelledby="contacto-titulo">
+      <div id="servicios">
+        <h2 id="contacto-titulo">Contacto</h2>
+        <p>Busco sumarme a un equipo de desarrollo. También tomo proyectos freelance.</p>
+      </div>
+      <ul class="contact-links">
+        <li><a href="mailto:marticontacto21@gmail.com">Correo <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://github.com/MartoHG" rel="me">GitHub <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.linkedin.com/in/martiniano-gavotti-538bba18b" rel="me">LinkedIn <span aria-hidden="true">↗</span></a></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="pie">
-    <p class="mono">© 2026 Martiniano Gavotti — Hecho a mano con HTML, CSS y JavaScript. Sin frameworks.</p>
-    <p class="mono pie__nota">Tipografías Archivo y Chivo, de la fundidora argentina Omnibus-Type.</p>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Martiniano Gavotti</p>
+      <a href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a>
+    </div>
   </footer>
-
-  <!-- Visor de capturas: se completa y muestra por JS al hacer click en una galería -->
-  <div class="lightbox" id="lightbox" hidden>
-    <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Captura anterior">‹</button>
-    <figure class="lightbox__figura">
-      <img class="lightbox__img" id="lightboxImg" src="" alt="">
-      <figcaption class="lightbox__caption mono" id="lightboxCaption"></figcaption>
-    </figure>
-    <button type="button" class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Siguiente captura">›</button>
-    <button type="button" class="lightbox__cerrar" id="lightboxCerrar" aria-label="Cerrar visor">✕</button>
-  </div>
-
-  <!-- GSAP + plugins (gratuitos desde la v3.13) y Lenis, por CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
 </body>
 </html>

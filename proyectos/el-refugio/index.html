@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Refugio | Martiniano Gavotti</title>
+  <meta name="description" content="Una tienda de muebles de jardín donde primero se confirma el pedido, después se cotiza el flete y recién entonces se cobra.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="El Refugio | Martiniano Gavotti">
+  <meta property="og:description" content="Una tienda de muebles de jardín donde primero se confirma el pedido, después se cotiza el flete y recién entonces se cobra.">
+  <link rel="canonical" href="https://martohg.github.io/proyectos/el-refugio/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/portfolio.css">
+  <link rel="stylesheet" href="/assets/desk-cases.css">
+  <script src="/assets/portfolio.js" defer></script>
+</head>
+<body class="case-document">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="/" aria-label="La mesa de Marto, inicio">
+        <span class="brand-icon" aria-hidden="true"></span>La mesa de Marto
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="/#proyectos">Proyectos</a>
+        <a class="nav-about" href="/#sobre-mi">Sobre mí</a>
+        <a href="/#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap case-page" id="contenido" tabindex="-1">
+    <header class="case-header">
+      <a class="back-link" href="/?proyecto=el-refugio#proyectos"><span aria-hidden="true">←</span> Volver a la mesa</a>
+      <div class="case-intro">
+        <h1>El Refugio</h1>
+        <p class="case-lead">Una tienda de muebles de jardín donde primero se confirma el pedido, después se cotiza el flete y recién entonces se cobra.</p>
+      </div>
+      <dl class="case-meta">
+        <div>
+          <dt>Rol</dt>
+          <dd>Análisis, diseño y desarrollo individual</dd>
+        </div>
+        <div>
+          <dt>Estado</dt>
+          <dd>Puesta en producción pendiente</dd>
+        </div>
+        <div>
+          <dt>Tecnologías</dt>
+          <dd>PHP 8.4, Laravel 13, MySQL, Blade, Tailwind CSS 4, HTMX, Mercado Pago Checkout Bricks, PHPUnit</dd>
+        </div>
+      </dl>
+    </header>
+
+    <figure class="gallery-item case-cover">
+      <a href="/assets/el-refugio/el-refugio-01-inicio.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del inicio de la tienda en tamaño completo">
+        <img src="/assets/el-refugio/el-refugio-01-inicio.webp" alt="Inicio de la tienda: etiqueta naranja con el título Muebles de jardín para disfrutar el verano y franja de beneficios" width="1920" height="956" fetchpriority="high" decoding="async">
+      </a>
+      <figcaption>Inicio de la tienda</figcaption>
+    </figure>
+
+    <div class="case-body">
+      <section class="case-section">
+        <h2>Cotizar el expreso antes de cobrar</h2>
+        <div class="case-text">
+          <p>
+            El Refugio es una forrajería de Olavarría que quería vender muebles de jardín a todo el país.
+            Como el expreso se cotiza para cada pedido, el costo de envío se confirma después de recibir el
+            pedido. El comercio se comunica por WhatsApp, carga la cotización y habilita un link de pago
+            cuando el cliente acepta el total.
+          </p>
+          <p>
+            El cliente puede usar el carrito como invitado, confirmar el pedido con correo verificado y
+            seguirlo desde la tienda. Para retirar en el local, el carrito abre WhatsApp con el pedido
+            escrito. El link de pago funciona sin iniciar sesión y ofrece crédito en cuotas, débito o dinero
+            en cuenta.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Confirmar el pago y conservar el historial</h2>
+        <div class="case-text">
+          <p>
+            Con Checkout Bricks, el servidor fija el importe y la cantidad de cuotas en cada intento. Si
+            alguno difiere, rechaza el intento. El precio se calcula dividiendo el total por uno menos la
+            tasa de la modalidad y redondeando hacia arriba. Con una tasa del 20 %, el cliente abona
+            $125.000 para que el negocio reciba $100.000.
+          </p>
+          <p>
+            El backend verifica la firma del webhook y vuelve a consultar a Mercado Pago para comprobar
+            referencia, importe, moneda, medio y cuotas. La idempotencia evita duplicados y una tarea
+            concilia pagos cada 15 minutos. Si se aprueba un pago para un pedido cancelado o reemplazado, el
+            panel lo envía a revisión.
+          </p>
+          <p>
+            Pedido, contacto, pago y envío tienen estados separados. Cada pedido guarda los precios y datos
+            al momento de la compra. Los aumentos masivos se previsualizan, se aplican en una transacción si
+            los precios siguen coincidiendo y quedan asentados en el historial.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Un panel para el trabajo de todos los días</h2>
+        <div class="case-text">
+          <p>
+            La bandeja de pedidos indica a quién contactar, qué cotizar, qué espera pago y qué hay que
+            despachar. El comercio edita productos, precios y contenido del inicio desde el panel. El
+            catálogo tiene buscador, categorías, ofertas, variantes de color e indica qué está agotado.
+          </p>
+          <p>
+            La gráfica toma las etiquetas colgantes del local para destacar títulos y precios. Usé
+            tipografía legible, contraste alto y áreas de toque amplias tanto para quienes compran desde el
+            celular como para quien atiende la tienda.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Qué hice</h2>
+        <div class="case-text">
+          <p>
+            Definí las reglas de venta con el comercio, escribí la especificación, diseñé la interfaz y armé
+            el modelo de datos. Organicé la lógica del negocio en servicios y validé las entradas con Form
+            Requests. Implementé el sistema módulo por módulo con Claude Code y más de 300 pruebas sobre
+            MySQL, empezando por el backend y siguiendo por las pantallas. También implementé las colas de
+            conversión a WebP y correo, y la auditoría de acciones sensibles del panel.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="case-gallery" aria-labelledby="capturas">
+      <h2 id="capturas">Capturas</h2>
+      <p>Capturas de la tienda en local con datos y fotos de prueba.</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <a href="/assets/el-refugio/el-refugio-02-catalogo.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del catálogo en tamaño completo">
+            <img src="/assets/el-refugio/el-refugio-02-catalogo.webp" alt="Catálogo de muebles con buscador, filtros por categoría y precios en etiquetas" width="1920" height="956" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Catálogo y buscador</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/el-refugio/el-refugio-03-ofertas.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de la sección de ofertas en tamaño completo">
+            <img src="/assets/el-refugio/el-refugio-03-ofertas.webp" alt="Sección de ofertas con productos marcados con el sello Oferta" width="1920" height="956" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Ofertas</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/el-refugio/el-refugio-04-panel-pedidos.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del panel de pedidos en tamaño completo">
+            <img src="/assets/el-refugio/el-refugio-04-panel-pedidos.webp" alt="Panel de pedidos: para contactar, para cotizar, esperando pago y para despachar, con aviso de un pago para revisar" width="1920" height="956" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Panel: pedidos por etapa</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="/assets/el-refugio/el-refugio-05-panel-productos.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura del panel de productos en tamaño completo">
+            <img src="/assets/el-refugio/el-refugio-05-panel-productos.webp" alt="Panel de productos con buscador, filtros de agotados y ocultos, ofertas y colores" width="1920" height="956" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Panel: productos</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer class="case-end">
+      <a class="back-link" href="/?proyecto=el-refugio#proyectos"><span aria-hidden="true">←</span> Volver a la mesa</a>
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Martiniano Gavotti</p>
+    </div>
+  </footer>
+</body>
+</html>

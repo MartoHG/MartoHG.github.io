@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estación de visión para cadena de arrastre | Martiniano Gavotti</title>
+  <meta name="description" content="Una cámara fija inspecciona los eslabones a medida que la cadena pasa frente a ella. Prototipo presentado en LOMATÓN 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Estación de visión para cadena de arrastre | Martiniano Gavotti">
+  <meta property="og:description" content="Una cámara fija inspecciona los eslabones a medida que la cadena pasa frente a ella. Prototipo presentado en LOMATÓN 2026.">
+  <link rel="canonical" href="https://martohg.github.io/proyectos/lomaton/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/portfolio.css">
+  <link rel="stylesheet" href="/assets/desk-cases.css">
+  <script src="/assets/portfolio.js" defer></script>
+</head>
+<body class="case-document">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="/" aria-label="La mesa de Marto, inicio">
+        <span class="brand-icon" aria-hidden="true"></span>La mesa de Marto
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="/#proyectos">Proyectos</a>
+        <a class="nav-about" href="/#sobre-mi">Sobre mí</a>
+        <a href="/#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap case-page" id="contenido" tabindex="-1">
+    <header class="case-header">
+      <a class="back-link" href="/?proyecto=lomaton#proyectos"><span aria-hidden="true">←</span> Volver a la mesa</a>
+      <div class="case-intro">
+        <h1>Estación de visión para cadena de arrastre</h1>
+        <p class="case-lead">Una cámara fija inspecciona los eslabones a medida que la cadena pasa frente a ella. Prototipo presentado en LOMATÓN 2026.</p>
+        <a class="text-link" href="https://github.com/MartoHG/LOMATON---CHAIN-TEAM" target="_blank" rel="noopener">Ver el repositorio en GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <dl class="case-meta">
+        <div>
+          <dt>Rol</dt>
+          <dd>Propuesta y desarrollo del prototipo en CHAIN TEAM</dd>
+        </div>
+        <div>
+          <dt>Estado</dt>
+          <dd>2.º puesto en LOMATÓN 2026</dd>
+        </div>
+        <div>
+          <dt>Tecnologías</dt>
+          <dd>Python, OpenCV, NumPy, Streamlit</dd>
+        </div>
+      </dl>
+    </header>
+
+    <figure class="gallery-item case-cover">
+      <a href="/assets/lomaton/lomaton-01-deteccion.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver captura de la detección sobre video real en tamaño completo">
+        <img src="/assets/lomaton/lomaton-01-deteccion.webp" alt="Tres cuadros del detector: cadena real sin defecto, travesaño pintado marcado como falta de chaveta, y tramo fuera de foco marcado como calidad insuficiente" width="904" height="616" fetchpriority="high" decoding="async">
+      </a>
+      <figcaption>Detección sobre video real</figcaption>
+    </figure>
+
+    <div class="case-body">
+      <section class="case-section">
+        <h2>Una vuelta para revisar toda la cadena</h2>
+        <div class="case-text">
+          <p>
+            En el horno 6 de la planta de Olavarría, cuatro cadenas arrastran cal a granel por unos 200
+            metros. Una rotura detiene la línea. La inspección visual se hacía cada dos horas, con el equipo
+            en marcha, entre polvo y calor. Había que encontrar detalles chicos, como una chaveta faltante,
+            un perno flojo o una fisura entre miles de eslabones.
+          </p>
+          <p>
+            Propuse aprovechar que cada cadena es un circuito cerrado. Con una estación fija, todos los
+            eslabones quedan a la vista en una vuelta. Un índice persistente permite seguir cuánto cambia un
+            eslabón a lo largo de los días y priorizar alertas de mantenimiento.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Qué propusimos para la planta</h2>
+        <div class="case-text">
+          <p>
+            La propuesta combinaba protección con sensores de hardware, medición geométrica y una etapa de
+            aprendizaje automático cuando hubiera datos suficientes. Los sensores magnéticos e inductivos,
+            la detección de baja velocidad y el monitoreo de corriente del motor sostendrían la protección
+            de corte. La estación mediría la elongación frente al umbral de reemplazo del 2 al 3 % y
+            registraría cada lectura por eslabón.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>La prueba con video real</h2>
+        <div class="case-text">
+          <p>
+            Construí el prototipo con visión clásica en OpenCV. Para ensayar el flujo ante la falta de un
+            conjunto de fallas registrado, marqué un travesaño amarillo sobre el video real como sustituto
+            visual de una chaveta faltante. Calibré una ventana fija de inspección y armé el procesamiento
+            desde el umbral hasta la agrupación de eventos y la alerta.
+          </p>
+          <p>
+            Con el mismo umbral, la demostración registró cero eventos en el video sano y dos en el video
+            con la marca. Agregué un control de nitidez que avisa cuando el cuadro no permite inspeccionar
+            un tramo. También probé <code>HoughCircles</code> para medir el paso entre pernos como
+            aproximación a la elongación e hice la maqueta del índice por eslabón. Conseguir contraste en el
+            video fue el principal límite de la prueba.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>LOMATÓN 2026</h2>
+        <div class="case-text">
+          <p>
+            Presentamos el prototipo como CHAIN TEAM en el desafío «¡Que no pare, que no pare!» y obtuvimos
+            el segundo puesto. El hackathon se hizo el 26 y 27 de agosto de 2026 en Olavarría, organizado
+            por Loma Negra, Fundación Loma Negra, Ferrosur y FIO/UNICEN.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="case-gallery" aria-labelledby="capturas">
+      <h2 id="capturas">Capturas</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <a href="/assets/lomaton/lomaton-02-indexacion.webp" data-gallery-image target="_blank" rel="noopener" aria-label="Ver diagrama de indexación de eslabones en tamaño completo">
+            <img src="/assets/lomaton/lomaton-02-indexacion.webp" alt="Diagrama del circuito cerrado de la cadena: estación de visión fija, encoder en la rueda motriz y eslabones numerados con su estado de salud" width="1034" height="484" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Indexación de eslabones</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer class="case-end">
+      <a class="back-link" href="/?proyecto=lomaton#proyectos"><span aria-hidden="true">←</span> Volver a la mesa</a>
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Martiniano Gavotti</p>
+    </div>
+  </footer>
+</body>
+</html>
