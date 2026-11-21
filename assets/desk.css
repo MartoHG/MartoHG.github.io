@@ -1,29 +1,21 @@
 @font-face {
-  font-family: "Bricolage Grotesque";
-  src: url("./fonts/bricolage-grotesque.woff2") format("woff2");
-  font-weight: 400 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Atkinson Hyperlegible Next";
-  src: url("./fonts/atkinson-hyperlegible-next.woff2") format("woff2");
-  font-weight: 200 800;
+  font-family: "Host Grotesk";
+  src: url("./fonts/host-grotesk.woff2") format("woff2");
+  font-weight: 300 800;
   font-display: swap;
 }
 
 :root {
   color-scheme: light;
-  --paper: #f7f3fb;
+  --paper: #faf8fc;
   --scene: #eae2f4;
-  --ink: #282137;
-  --muted: #584f65;
-  --line: #d9cfe4;
+  --ink: #201b29;
+  --muted: #514a57;
+  --line: #dcd5e3;
   --sage: #b7c6a8;
   --butter: #f8e3a0;
   --focus: #674796;
-  --display: "Bricolage Grotesque", "Atkinson Hyperlegible Next", sans-serif;
-  --body: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --body: "Host Grotesk", system-ui, sans-serif;
   --gutter: clamp(1rem, 4.5vw, 4.5rem);
 }
 
@@ -33,7 +25,6 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 a { color: inherit; text-underline-offset: .24em; }
 img { display: block; max-width: 100%; }
 h1, h2, h3, p { margin: 0; }
-h1, h2, h3 { font-family: var(--display); }
 ::selection { background: var(--butter); color: var(--ink); }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
 main:focus { outline: none; }
@@ -63,8 +54,8 @@ main:focus { outline: none; }
   align-items: center;
   gap: .625rem;
   flex: none;
-  font: 750 1rem var(--display);
-  letter-spacing: -.025em;
+  font: 700 1rem var(--body);
+  letter-spacing: -.015em;
   text-decoration: none;
 }
 .brand-icon {
@@ -106,11 +97,10 @@ main:focus { outline: none; }
   padding-block: clamp(2.25rem, 3.2vw, 3.6rem) clamp(1.5rem, 2.25vw, 2.15rem);
 }
 .intro h1 {
-  font-size: clamp(3.25rem, 6.1vw, 5.65rem);
-  line-height: .97;
-  letter-spacing: -.041em;
-  word-spacing: .035em;
-  font-weight: 760;
+  font-size: clamp(3.25rem, 6.85vw, 6rem);
+  line-height: .94;
+  letter-spacing: -.046em;
+  font-weight: 720;
 }
 .intro-role {
   margin-top: .85rem;
@@ -164,9 +154,9 @@ main:focus { outline: none; }
 }
 .project-index h2 {
   font-size: clamp(1.75rem, 2.8vw, 2.5rem);
-  font-weight: 770;
+  font-weight: 710;
   line-height: 1;
-  letter-spacing: -.045em;
+  letter-spacing: -.035em;
 }
 .index-hint { margin: .4rem 0 .95rem; font-size: 1rem; color: var(--muted); }
 .project-tabs { display: grid; gap: .18rem; }
@@ -192,8 +182,8 @@ main:focus { outline: none; }
 }
 .project-tab strong, .project-tab small { display: block; }
 .project-tab strong {
-  font: 730 clamp(1.02rem, 1.48vw, 1.33rem)/1.1 var(--display);
-  letter-spacing: -.026em;
+  font: 680 clamp(1.02rem, 1.48vw, 1.33rem)/1.1 var(--body);
+  letter-spacing: -.017em;
 }
 .project-tab small { margin-top: .2rem; color: var(--muted); font-size: .82rem; line-height: 1.1; }
 .project-tab[data-selected] small { color: #554629; }
@@ -237,9 +227,9 @@ main:focus { outline: none; }
 .preview-copy h3 {
   margin-block: .42rem .58rem;
   font-size: clamp(1.85rem, 3.15vw, 3rem);
-  font-weight: 780;
-  line-height: .98;
-  letter-spacing: -.047em;
+  font-weight: 710;
+  line-height: 1.02;
+  letter-spacing: -.035em;
 }
 .preview-copy > p:not(.project-context) { max-width: 34ch; color: var(--muted); line-height: 1.48; }
 .case-link {
@@ -295,7 +285,7 @@ main:focus { outline: none; }
 .about h2, .contact h2 {
   margin-bottom: .7rem;
   font-size: clamp(2rem, 4.5vw, 3.7rem);
-  letter-spacing: -.055em;
+  letter-spacing: -.035em;
   line-height: 1;
 }
 .about-copy p, .contact p { max-width: 61ch; color: var(--muted); font-size: 1.08rem; line-height: 1.53; }
@@ -356,7 +346,7 @@ main:focus { outline: none; }
   .site-nav a { font-size: .86rem; }
   .site-nav a span { display: none; }
   .intro { padding-block: 1.4rem 1.04rem; }
-  .intro h1 { max-width: 12ch; font-size: clamp(2.7rem, 12vw, 4.75rem); }
+  .intro h1 { font-size: clamp(2.6rem, 11.8vw, 4.75rem); }
   .intro-role { margin-top: .55rem; }
   .intro-bio { font-size: 1.02rem; line-height: 1.36; }
   .diorama { aspect-ratio: 1.7; border-radius: .7rem; }
