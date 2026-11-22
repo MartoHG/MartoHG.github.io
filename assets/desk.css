@@ -146,6 +146,40 @@ main:focus { outline: none; }
 .diorama canvas { visibility: hidden; pointer-events: none; }
 .diorama[data-rendered] canvas { visibility: visible; }
 .diorama[data-rendered] .desk-poster { visibility: hidden; }
+.cat-pet {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
+  transform: translate(-50%, -50%);
+}
+.diorama[data-rendered] .cat-pet { visibility: visible; }
+.cat-pet span {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  padding: .25rem .5rem;
+  border: 1px solid #d5c9e3;
+  border-radius: .35rem;
+  background: var(--paper);
+  font: 650 .75rem/1.25 var(--body);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.diorama[data-rendered] .cat-pet:is(:hover, :focus-visible) span { opacity: 1; pointer-events: auto; }
+@media (hover: none) {
+  .diorama[data-rendered] .cat-pet span { opacity: 1; pointer-events: auto; }
+}
 .project-index {
   display: flex;
   flex-direction: column;
@@ -431,3 +465,25 @@ main:focus { outline: none; }
   height: .12rem;
 }
 .tech-list li:nth-child(even) .tech-cat::before { height: .12rem; }
+
+:root[data-theme="dark"] { --scene: #28243a; }
+:root[data-theme="dark"] ::selection { color: #2e2314; }
+:root[data-theme="dark"] .skip-link { color: var(--paper); }
+:root[data-theme="dark"] .intro-role span { color: var(--focus); }
+:root[data-theme="dark"] .diorama,
+:root[data-theme="dark"] .cat-pet span { border-color: var(--line); }
+:root[data-theme="dark"] .diorama:not([data-rendered]) .desk-poster {
+  background: center / cover no-repeat url("./desk/desktop-dark.webp");
+}
+:root[data-theme="dark"] .desk-poster img { visibility: hidden; }
+@media (max-width: 640px) {
+  :root[data-theme="dark"] .diorama:not([data-rendered]) .desk-poster {
+    background-image: url("./desk/mobile-dark.webp");
+  }
+}
+:root[data-theme="dark"] .project-tab:hover { background: #30283e; }
+:root[data-theme="dark"] .project-tab[data-selected] { background: var(--butter); color: #2e2314; }
+:root[data-theme="dark"] .case-link:hover { background: #dac8eb; }
+:root[data-theme="dark"] .preview-media { background: var(--surface); }
+:root[data-theme="dark"] .world { border-color: #4c5d4c; background: #26342d; }
+:root[data-theme="dark"] .world p { color: #c4d1bb; }

@@ -4,6 +4,7 @@ const tabs = Array.from(index.querySelectorAll('[data-project]'));
 const panels = tabs.map(tab => document.getElementById('vista-' + tab.dataset.project));
 let selection = 0;
 let scene;
+let selectedBeforeScene = false;
 
 index.setAttribute('role', 'tablist');
 index.setAttribute('aria-orientation', 'vertical');
@@ -59,7 +60,11 @@ function selectProject(position, { remember = false } = {}) {
     history.replaceState(history.state, '', url);
   }
 
-  if (changed || remember) scene?.select(position);
+  if (scene) {
+    if (changed || remember) scene.select(position);
+  } else if (remember) {
+    selectedBeforeScene = true;
+  }
 }
 
 function restoreProject() {
@@ -74,7 +79,9 @@ async function loadScene() {
   try {
     const { mountDesk } = await import('./desk-scene.js');
     const folderNames = tabs.map(tab => tab.dataset.folderLabel || tab.querySelector('strong').textContent);
-    scene = mountDesk(stage, folderNames, selection);
+    const projectImages = panels.map(panel => panel.querySelector('.preview-media img'));
+    scene = mountDesk(stage, folderNames, projectImages, selection);
+    if (selectedBeforeScene) scene.select(selection);
   } catch {
     // The poster and all portfolio navigation are already present.
   }

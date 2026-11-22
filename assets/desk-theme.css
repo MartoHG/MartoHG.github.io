@@ -1,0 +1,75 @@
+:root[data-theme="light"] { color-scheme: light; }
+
+:root[data-theme="dark"], :root[data-theme="dark"] .case-document {
+  color-scheme: dark;
+  --paper: #17141f;
+  --surface: #242030;
+  --ink: #f3ecf8;
+  --muted: #c3b8cf;
+  --line: #4c425b;
+  --focus: #cfb1f5;
+}
+
+:root[data-theme="dark"] .brand-icon {
+  border-color: #859673;
+  background: #a9ba9b;
+  color: #282235;
+}
+
+.theme-toggle {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+:root[data-theme] .theme-toggle { display: inline-grid; }
+:root[data-theme] .site-header .site-nav { margin-inline-start: auto; }
+.theme-toggle:hover { background: var(--theme-control-hover, #eee7f5); }
+:root[data-theme="dark"] .theme-toggle { --theme-control-hover: #352c48; }
+
+.theme-toggle::before {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.8 14.5A9 9 0 0 1 9.5 3.2a9 9 0 1 0 11.3 11.3Z'/%3E%3C/svg%3E");
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  background: currentColor;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+:root[data-theme="dark"] .theme-toggle::before {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 23.75rem) {
+  :root[data-theme] .site-header .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 .6rem;
+    padding-block: .35rem;
+  }
+
+  :root[data-theme] .site-header .wordmark {
+    grid-column: 1 / -1;
+    width: fit-content;
+    min-height: 2.15rem;
+  }
+
+  :root[data-theme] .site-header .site-nav {
+    width: auto;
+    justify-content: flex-start;
+    margin-inline-start: 0;
+  }
+}
+
+@media (forced-colors: active) {
+  .theme-toggle::before { forced-color-adjust: none; background: ButtonText; }
+}

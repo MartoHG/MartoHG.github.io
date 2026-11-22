@@ -158,6 +158,7 @@
   border: 1px solid #b8a65d;
   border-radius: .5rem;
   background: var(--accent);
+  color: var(--accent-ink);
   line-height: 1.3;
   text-decoration: none;
 }
@@ -287,3 +288,6 @@
     height: 1.85rem;
   }
 }
+
+:root[data-theme="dark"] .case-document { --accent-ink: #2e2314; }
+:root[data-theme="dark"] .case-document .viewer::backdrop { background: rgb(12 9 19 / .86); }

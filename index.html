@@ -20,7 +20,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="preload" href="/assets/fonts/host-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/desk-theme.js"></script>
   <link rel="stylesheet" href="/assets/desk.css">
+  <link rel="stylesheet" href="/assets/desk-theme.css">
   <script type="module" src="/assets/desk.js"></script>
 </head>
 <body id="inicio">
@@ -33,6 +35,7 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
       </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Modo oscuro" aria-pressed="false"></button>
     </div>
   </header>
 
@@ -47,11 +50,12 @@
 
     <section class="work" id="proyectos" aria-labelledby="proyectos-titulo">
       <div class="desk-grid">
-        <div class="diorama" data-diorama data-project="senda" role="img" aria-label="Escritorio verde en miniatura. Un gato atigrado duerme sobre las carpetas y empuja la que elegís.">
+        <div class="diorama" data-diorama data-project="senda" role="group" aria-label="Escritorio en miniatura con un gato que empuja la carpeta que elegís.">
           <picture class="desk-poster">
             <source media="(max-width: 640px)" srcset="/assets/desk/mobile.webp">
             <img src="/assets/desk/desktop.webp" alt="" width="853" height="462" decoding="async" fetchpriority="high">
           </picture>
+          <button class="cat-pet" type="button" data-cat-pet><span>Acariciar al gato</span></button>
         </div>
 
         <div class="project-index">
@@ -171,8 +175,8 @@
       <img class="portrait" src="/assets/foto.jpg" alt="Martiniano Gavotti" width="810" height="1080" loading="lazy" decoding="async">
       <div class="about-copy">
         <h2 id="sobre-mi-titulo">Sobre mí</h2>
-        <p>Soy Martiniano Gavotti y me dicen Marto. Soy de Olavarría y estoy cursando el último año de Analista en Sistemas. Empecé a trabajar en proyectos comerciales en 2026.</p>
-        <p>Me gusta participar desde el relevamiento hasta que el sistema está en uso. En Senda, por ejemplo, trabajé con el equipo para entender cómo se registraban las clases en la escuela y llevar ese proceso al sistema, desde la carga hasta el PDF del libro de temas.</p>
+        <p>Soy Martiniano Gavotti, me dicen Marto y soy de Olavarría. Completé la cursada de Análisis de Sistemas y hoy desarrollo software, principalmente sistemas de gestión y herramientas para automatizar tareas.</p>
+        <p>Cuando empiezo un proyecto, me gusta ver cómo se hace el trabajo hoy y qué pasos le hacen perder tiempo a la gente. Esa curiosidad también me llevó a diseñar flujos con agentes de IA para revisar código y probar cambios. Lo que más disfruto es ver que algo que armé le hace más fácil el trabajo a alguien.</p>
       </div>
     </section>
 

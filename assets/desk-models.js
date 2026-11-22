@@ -108,9 +108,10 @@ function buildDesk(scene, contact) {
   shadow(desk, contact, 4.35, .035, -1.76, 2.15, 2.1);
   shadow(desk, contact, 1.05, .035, -.44, 4.4, 3.22);
   shadow(desk, contact, -4.35, .035, 2.05, 1.44, 1.46);
-  buildComputer(desk);
+  const monitor = buildComputer(desk);
   buildPlant(desk);
   buildAccessories(desk);
+  return monitor;
 }
 
 function buildComputer(desk) {
@@ -139,7 +140,24 @@ function buildComputer(desk) {
     [-.57, 1.18, .38, 0xa4bddd], [-.13, 1.18, .22, 0xf2cf9e],
     [-.7, 1.03, .22, 0xd7b5df], [-.42, 1.03, .08, 0x9ec7bd],
   ];
-  boxes(monitor, code.map(([x, y, width, tint]) => [x + width / 2, y, .611, width, .049, .014, tint]));
+  const codeLines = boxes(monitor, code.map(([x, y, width, tint]) => [x + width / 2, y, .611, width, .049, .014, tint]));
+
+  const thumbnail = document.createElement('canvas');
+  thumbnail.width = 128;
+  thumbnail.height = 70;
+  const context = thumbnail.getContext('2d');
+  const texture = new THREE.CanvasTexture(thumbnail);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.magFilter = THREE.NearestFilter;
+  texture.minFilter = THREE.LinearFilter;
+  texture.generateMipmaps = false;
+  const display = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.65, .90),
+    new THREE.MeshBasicMaterial({ map: texture }),
+  );
+  display.position.set(0, 1.295, .623);
+  display.visible = false;
+  monitor.add(display);
 
   const keyboard = group(desk, -3.19, .023, .37);
   keyboard.rotation.y = .09;
@@ -157,6 +175,26 @@ function buildComputer(desk) {
   slab(desk, -1.52, .03, .46, .76, .031, 1.05, .14, 0x90a594);
   slab(desk, -1.52, .062, .46, .45, .133, .62, .10, 0xded1e5);
   boxes(desk, [[-1.52, .198, .585, .036, .02, .21, 0x9c8eae]]);
+
+  return {
+    showPreview(image) {
+      const scale = Math.min(thumbnail.width / image.naturalWidth, thumbnail.height / image.naturalHeight);
+      const width = Math.round(image.naturalWidth * scale);
+      const height = Math.round(image.naturalHeight * scale);
+      const left = Math.round((thumbnail.width - width) / 2);
+      const top = Math.round((thumbnail.height - height) / 2);
+      context.fillStyle = '#292d42';
+      context.fillRect(0, 0, thumbnail.width, thumbnail.height);
+      context.drawImage(image, left, top, width, height);
+      context.fillStyle = 'rgba(41, 45, 66, .14)';
+      for (let row = top + 1; row < top + height; row += 2) {
+        context.fillRect(left, row, width, 1);
+      }
+      texture.needsUpdate = true;
+      display.visible = true;
+      codeLines.visible = false;
+    },
+  };
 }
 
 function buildPlant(desk) {
@@ -180,6 +218,27 @@ function buildPlant(desk) {
     [.17, 1.04, -.21, .34, .15, .26, 0x638e68],
     [.33, 1.125, -.30, .21, .14, .22, 0x87ad7d],
   ]);
+}
+
+function buildLightSwitch(scene, contact) {
+  const base = group(scene, 3.14, .029, .60);
+  shadow(scene, contact, base.position.x, .034, base.position.z, .82, .68);
+  slab(base, 0, 0, 0, .56, .075, .46, .055, 0x77758b);
+  slab(base, 0, .074, 0, .51, .04, .41, .04, 0xd5c6dd);
+  const rocker = group(base, -.06, .137, 0);
+  boxes(rocker, [[0, 0, 0, .21, .057, .32, 0xf1e3f2]]);
+  const indicator = new THREE.Mesh(boxGeometry, new THREE.MeshBasicMaterial({ color: 0x91a58d }));
+  indicator.position.set(.149, .125, .065);
+  indicator.scale.set(.063, .025, .10);
+  base.add(indicator);
+
+  return {
+    contact: new THREE.Vector3(base.position.x - .06, .285, base.position.z),
+    setDark(dark) {
+      rocker.rotation.x = dark ? .23 : -.23;
+      indicator.material.color.setHex(dark ? 0xf7c67d : 0x91a58d);
+    },
+  };
 }
 
 function buildAccessories(desk) {
@@ -336,16 +395,19 @@ function buildCat(scene) {
   slab(head, 0, -.32, 0, 1.36, .18, 1.05, .13, fur.dark);
   slab(head, 0, -.23, .025, 1.63, .50, 1.17, .14, fur.base);
   slab(head, -.015, .24, -.035, 1.48, .28, 1.055, .13, fur.light);
+  const ear = group(head, .50, .48, -.02);
+  boxes(ear, [
+    [0, .024, 0, .39, .30, .36, fur.dark],
+    [.16, .171, .105, .40, .18, .36, fur.base],
+    [.34, .11, .203, .16, .26, .31, fur.dark],
+    [.28, .105, .37, .17, .16, .031, fur.nose],
+  ]);
   boxes(head, [
     [-.53, .48, -.06, .42, .30, .40, fur.dark],
     [-.60, .69, -.09, .29, .19, .31, fur.base],
     [-.66, .815, -.11, .17, .095, .23, fur.light],
     [-.55, .558, .157, .235, .24, .04, fur.nose],
     [-.61, .70, .08, .12, .13, .046, fur.nose],
-    [.50, .504, -.02, .39, .30, .36, fur.dark],
-    [.66, .651, .085, .40, .18, .36, fur.base],
-    [.84, .59, .183, .16, .26, .31, fur.dark],
-    [.78, .585, .35, .17, .16, .031, fur.nose],
     [-.275, .489, .245, .12, .063, .29, fur.dark],
     [0, .498, .27, .125, .046, .36, fur.stripe],
     [.275, .489, .245, .115, .063, .28, fur.dark],
@@ -364,18 +426,14 @@ function buildCat(scene) {
     [-.195, -.12, .732, .041, .039, .018, fur.dark],
     [.195, -.12, .732, .041, .039, .018, fur.dark],
   ]);
-  const closedEyes = boxes(head, [
-    [-.39, .09, .631, .255, .052, .045, fur.ink],
-    [-.53, .12, .631, .053, .052, .047, fur.ink],
-    [.39, .09, .631, .255, .052, .045, fur.ink],
-    [.53, .12, .631, .053, .052, .047, fur.ink],
-  ]);
-  const openEyes = boxes(head, [
-    [-.36, .096, .628, .165, .15, .042, fur.ink],
-    [.36, .096, .628, .165, .15, .042, fur.ink],
-    [-.38, .129, .653, .048, .047, .016, 0xfaf1d9],
-    [.34, .129, .653, .048, .047, .016, 0xfaf1d9],
-  ]);
+  const closedEyes = [-1, 1].map(side => boxes(head, [
+    [side * .39, .09, .631, .255, .052, .045, fur.ink],
+    [side * .53, .12, .631, .053, .052, .047, fur.ink],
+  ]));
+  const openEyes = [-1, 1].map(side => boxes(head, [
+    [side * .36, .096, .628, .165, .15, .042, fur.ink],
+    [side * .36 - .02, .129, .653, .048, .047, .016, 0xfaf1d9],
+  ]));
 
   const upper = group(scene);
   boxes(upper, [[0, .50, 0, .40, 1, .39, fur.base], [0, .68, .004, .411, .17, .399, fur.dark]]);
@@ -387,13 +445,14 @@ function buildCat(scene) {
     [-.098, -.037, .231, .018, .082, .016, fur.dark],
     [.098, -.037, .231, .018, .082, .016, fur.dark],
   ]);
-  return { torso, tail, head, openEyes, closedEyes, upper, lower, paw };
+  return { torso, tail, head, ear, openEyes, closedEyes, upper, lower, paw };
 }
 
 export function buildModels(scene, folderNames) {
   const contact = shadowMaterial(.27, 0x445748);
-  buildDesk(scene, contact);
+  const monitor = buildDesk(scene, contact);
+  const lightSwitch = buildLightSwitch(scene, contact);
   const folders = buildFolders(scene, contact, folderNames);
   const cat = buildCat(scene);
-  return { folders, cat };
+  return { folders, cat, monitor, lightSwitch };
 }
